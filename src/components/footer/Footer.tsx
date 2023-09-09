@@ -18,6 +18,7 @@ const Footer = () => {
   return (
     <div className="bg-[#191919] h-[365px]">
       <div className="max-w-[1110px] mx-auto">
+        <hr className="w-[101px] h-[4px] bg-[#D87D4A] border-none" />
         {/* NAVIGATION */}
         <div className="flex flex-row justify-between pt-[75px] pb-[36px]">
           <Link href="/" className="hover:cursor-pointer">

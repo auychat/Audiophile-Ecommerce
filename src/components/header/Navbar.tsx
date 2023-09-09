@@ -30,7 +30,14 @@ const Navbar = () => {
           ))}
         </div>
         <div className="flex items-center">
-          <Image src={CartIcon} alt="cart" width={23.33} height={20} />
+          <Image
+            src={CartIcon}
+            alt="cart"
+            // width={23.33}
+            // height={20}
+            sizes="100vw"
+            className="w-[23.33px] h-[20px] rounded-lg"
+          />
         </div>
       </nav>
       <hr className="max-w-[1110px] mx-auto opacity-20" />

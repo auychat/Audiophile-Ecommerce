@@ -25,14 +25,10 @@ const FeatureItems = () => {
               src={item.image}
               alt={item.title}
               sizes="100vw"
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
-              // layout="responsive"
+              className="w-full h-full"
             />
           </div>
-          <div className="flex flex-col gap-4 text-center items-center mt-[82px]">
+          <div className="flex flex-col gap-4 text-center items-center mt-[85px]">
             <h1 className="font-bold">{item.title}</h1>
             <Link href={item.link}>
               <div className="flex flex-row gap-2 items-center">

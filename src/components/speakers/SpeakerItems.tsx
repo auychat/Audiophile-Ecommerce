@@ -38,9 +38,10 @@ const SpeakerItems = () => {
           <Image
             src={item.image}
             alt={item.name}
-            width={540}
-            height={560}
-            className="rounded-lg"
+            // width={540}
+            // height={560}
+            sizes="100vw"
+            className="w-[540px] h-[560px] rounded-lg"
           />
 
           <div className="max-w-[445px] h-full gap-8 flex flex-col justify-center">
