@@ -1,0 +1,45 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --background-color: #FAFAFA;
+  --primary-color: #101010;
+  --secodary-color: #F1F1F1;
+  --button-color-primary: #D87D4A;
+  --button-color-secondary: #FBAF85;
+  --pure-wite: #FFFFFF;
+  --pure-black: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #FAFAFA;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
