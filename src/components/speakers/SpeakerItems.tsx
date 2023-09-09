@@ -1,44 +1,34 @@
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
-import XX99MarkII from "../../../public/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg";
-import XX99MarkI from "../../../public/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg";
-import XX59 from "../../../public/assets/product-xx59-headphones/desktop/image-product.jpg";
+import ZX9Img from "../../../public/assets/product-zx9-speaker/desktop/image-product.jpg";
+import ZX7Img from "../../../public/assets/product-zx7-speaker/desktop/image-product.jpg";
+import Link from "next/link";
+import Image from "next/image";
 
-const headphoneItems = [
+const speakersItems = [
   {
     id: 1,
-    name: "XX99 MARK II HEADPHONES",
-    image: XX99MarkII,
+    name: "ZX9 Speaker",
+    desc: "Upgrade your sound system with the all new ZX9 active speaker. It's a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
+    image: ZX9Img,
     link: "#",
-    desc: "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
     newproduct: true,
     reverse: false,
   },
   {
     id: 2,
-    name: "XX99 MARK I HEADPHONES",
-    image: XX99MarkI,
+    name: "ZX7 Speaker",
+    desc: "Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
+    image: ZX7Img,
     link: "#",
-    desc: "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
     newproduct: false,
     reverse: true,
   },
-  {
-    id: 3,
-    name: "XX59 HEADPHONES",
-    image: XX59,
-    link: "#",
-    desc: "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
-    newproduct: false,
-    reverse: false,
-  },
 ];
 
-const HeadphoneItems = () => {
+const SpeakerItems = () => {
   return (
     <>
-      {headphoneItems.map((item) => (
+      {speakersItems.map((item) => (
         <div
           key="id"
           className={`max-w-[1110px] min-h-[560px] mx-auto pt-[10rem] flex flex-row ${
@@ -77,4 +67,4 @@ const HeadphoneItems = () => {
   );
 };
 
-export default HeadphoneItems;
+export default SpeakerItems;
