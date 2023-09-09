@@ -4,7 +4,7 @@ import BestGearImg from "../../../public/assets/shared/desktop/image-best-gear.j
 
 const BestGear = () => {
   return (
-    <div className="max-w-[1110px] h-[588px] mx-auto my-[200px] flex flex-row justify-between gap-8 rounded-lg">
+    <div className="max-w-[1110px] h-[588px] mx-auto flex flex-row justify-between gap-8 rounded-lg">
       <div className="max-w-[445px] gap-8 flex flex-col justify-center">
         <h1 className="font-bold text-[40px] leading-[44px] tracking-[1.43px]">
           BRINGING YOU THE <strong className="text-[#D87D4A]">BEST</strong> AUDIO GEAR

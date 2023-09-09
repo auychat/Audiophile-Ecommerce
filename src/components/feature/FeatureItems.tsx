@@ -14,30 +14,35 @@ const ItemsData = [
 
 const FeatureItems = () => {
   return (
-    <div className="relative max-w-[1110px] mx-auto flex flex-row justify-between items-center gap-7 min-h-[572px] h-full">
+    <div className="relative max-w-[1110px] mx-auto h-[284px] flex flex-row justify-between items-end gap-7">
       {ItemsData.map((item) => (
         <div
           key={item.id}
-          className="bg-[#F1F1F1] flex flex-col items-center text-center gap-4 p-4 min-w-[350px] min-h-[204px] rounded-md relative"
+          className="bg-[#F1F1F1] flex flex-col items-center text-center justify-center gap-4 p-4 w-[350px] h-[204px] rounded-md relative"
         >
           <div className="absolute w-[50%] h-[50%] top-[-65px] min-h-[180px]">
             <Image
               src={item.image}
               alt={item.title}
-              className="w-[75%] h-[75%]"
-              objectFit="cover"
-              layout="fill"
+              sizes="100vw"
+              style={{
+                width: '100%',
+                height: 'auto',
+              }}
+              // layout="responsive"
             />
           </div>
-          <h1 className="font-bold mt-24">{item.title}</h1>
-          <Link href={item.link}>
-            <div className="flex flex-row gap-2 items-center">
-              <p className="text-[13px] font-bold opacity-50 tracking-[1px]">
-                SHOP
-              </p>
-              <Image src={RightArrow} alt="right arrow icon" />
-            </div>
-          </Link>
+          <div className="flex flex-col gap-4 text-center items-center mt-[82px]">
+            <h1 className="font-bold">{item.title}</h1>
+            <Link href={item.link}>
+              <div className="flex flex-row gap-2 items-center">
+                <p className="text-[13px] font-bold opacity-50 tracking-[1px] hover:text-[#D87D4A] hover:font-bold transition-colors duration-300">
+                  SHOP
+                </p>
+                <Image src={RightArrow} alt="right arrow icon" />
+              </div>
+            </Link>
+          </div>
         </div>
       ))}
     </div>

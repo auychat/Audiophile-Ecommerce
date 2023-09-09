@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="flex items-center gap-10">
             {Links.map((link) => (
               <Link href={link.link} key={link.id}>
-                <p className="text-white font-bold text-[13px] leading-[25px] tracking-[2px] hover:text-[#D87D4A] transition-colors duration-300  ">
+                <p className="text-white font-bold text-[13px] leading-[25px] tracking-[2px] hover:text-[#D87D4A] transition-colors duration-300">
                   {link.title}
                 </p>
               </Link>

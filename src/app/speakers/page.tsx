@@ -1,9 +1,9 @@
 import React from 'react'
 
-const speakers = () => {
+const Speakers = () => {
   return (
     <div>Speakers</div>
   )
 }
 
-export default speakers
+export default Speakers
