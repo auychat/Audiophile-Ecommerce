@@ -16,11 +16,13 @@ const Links = [
 
 const Footer = () => {
   return (
-    <div className="bg-[#101010] h-[365px]">
+    <div className="bg-[#191919] h-[365px]">
       <div className="max-w-[1110px] mx-auto">
         {/* NAVIGATION */}
         <div className="flex flex-row justify-between pt-[75px] pb-[36px]">
-          <Image src={Logo} alt="Audiophile Logo" />
+          <Link href="/" className="hover:cursor-pointer">
+            <Image src={Logo} alt="Audiophile Logo" />
+          </Link>
           <div className="flex items-center gap-10">
             {Links.map((link) => (
               <Link href={link.link} key={link.id}>

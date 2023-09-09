@@ -1,44 +1,24 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
-import XX99MarkII from "../../../public/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg";
-import XX99MarkI from "../../../public/assets/product-xx99-mark-one-headphones/desktop/image-product.jpg";
-import XX59 from "../../../public/assets/product-xx59-headphones/desktop/image-product.jpg";
+import YX1Earphones from "../../../public/assets/product-yx1-earphones/desktop/image-product.jpg";
 
-const headphoneItems = [
+const earphoneItems = [
   {
     id: 1,
-    name: "XX99 MARK II HEADPHONES",
-    image: XX99MarkII,
+    name: "YX1 WIRELESS EARPHONES",
+    image: YX1Earphones,
     link: "#",
-    desc: "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
+    desc: "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
     newproduct: true,
-    reverse: false,
-  },
-  {
-    id: 2,
-    name: "XX99 MARK I HEADPHONES",
-    image: XX99MarkI,
-    link: "#",
-    desc: "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
-    newproduct: false,
-    reverse: true,
-  },
-  {
-    id: 3,
-    name: "XX59 HEADPHONES",
-    image: XX59,
-    link: "#",
-    desc: "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
-    newproduct: false,
     reverse: false,
   },
 ];
 
-const HeadphoneItems = () => {
+const EarphoneItems = () => {
   return (
     <>
-      {headphoneItems.map((item) => (
+      {earphoneItems.map((item) => (
         <div
           key={item.id}
           className={`max-w-[1110px] min-h-[560px] mx-auto pt-[10rem] flex flex-row ${
@@ -77,4 +57,4 @@ const HeadphoneItems = () => {
   );
 };
 
-export default HeadphoneItems;
+export default EarphoneItems;

@@ -30,7 +30,7 @@ const SpeakerItems = () => {
     <>
       {speakersItems.map((item) => (
         <div
-          key="id"
+          key={item.id}
           className={`max-w-[1110px] min-h-[560px] mx-auto pt-[10rem] flex flex-row ${
             item.reverse && "flex-row-reverse"
           } gap-[125px] justify-center items-center`}

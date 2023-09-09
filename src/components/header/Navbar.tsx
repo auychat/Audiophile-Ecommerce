@@ -16,7 +16,9 @@ const Navbar = () => {
     <header className="bg-[#191919] relative z-20">
       <nav className="max-w-[1110px] min-h-[96px] mx-auto flex flex-row justify-between justify-items-center item-center w-full py-4">
         <div className="flex items-center">
-          <Image src={Logo} alt="logo"></Image>
+          <Link href="/" className="hover:cursor-pointer">
+            <Image src={Logo} alt="Audiophile Logo" />
+          </Link>
         </div>
         <div className="flex items-center gap-10">
           {Links.map((link) => (
