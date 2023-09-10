@@ -4,6 +4,7 @@ import HeadphoneItems from "@/components/headphones/HeadphoneItems";
 import React from "react";
 
 const Headphones = () => {
+
   return (
     <div>
       {/* TITLE */}
