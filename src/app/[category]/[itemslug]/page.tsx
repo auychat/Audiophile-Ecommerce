@@ -1,7 +1,5 @@
 "use client";
-
-import React, { useState } from "react";
-import Image from "next/image";
+import React from "react";
 import { productsData } from "@/pages/api/json/data";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -20,28 +18,30 @@ type CartItem = {
   quantity: number;
 };
 
-const Page = ({ params }: { params: { slug: string } }) => {
+interface pageProps {
+  params: { itemslug: string };
+}
+
+const ProductItemsDetail: React.FC<pageProps> = ({ params }) => {
   const [quantity, setQuantity] = React.useState(1);
   const [cart, setCart] = React.useState<CartItem[]>([]);
 
-  const data = productsData.find((product) => product.slug === params.slug);
+  const data = productsData.find((product) => product.slug === params.itemslug);
+  console.log(params.itemslug)
 
   const handleAddToCart = () => {
-    // console.log("cart", cart);
     const cartItem: CartItem = {
       productId: data?.id || 0,
       productName: data?.name || "",
       quantity: quantity,
     };
-    // console.log("Adding to cart",cartItem);
 
-    // setCart([...cart, cartItem]);
     setCart((prevCart) => [...prevCart, cartItem]);
-    console.log("Updated cart from normal log", cart);
 
     setQuantity(1);
   };
 
+  // For test only
   React.useEffect(() => {
     console.log("Updated cart from useEffect", cart);
   }, [cart]);
@@ -109,4 +109,4 @@ const Page = ({ params }: { params: { slug: string } }) => {
   );
 };
 
-export default Page;
+export default ProductItemsDetail;
