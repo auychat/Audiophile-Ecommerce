@@ -35,7 +35,7 @@ const HeadphoneItems = () => {
             alt={product.item.name}
             width={540}
             height={560}
-            // sizes="100vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="w-[540px] h-[560px] rounded-lg"
           />
 
@@ -51,7 +51,7 @@ const HeadphoneItems = () => {
             <p className="text-[15px] leading-[25px] opacity-50 font-medium">
               {product.item.description}
             </p>
-            <Link href={product.item.slug}>
+            <Link href={`/headphones/${product.item.slug}`}>
               <button className="font-bold text-[13px] trading-[1px] inline-block px-9 py-3.5 bg-button-primary text-white rounded-sm hover:bg-button-secondary transition duration-300 ease-in-out">
                 SEE PRODUCT
               </button>
