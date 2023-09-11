@@ -7,9 +7,9 @@ import EarphonesImg from "../../../public/assets/shared/desktop/image-category-t
 import RightArrow from "../../../public/assets/shared/desktop/icon-arrow-right.svg";
 
 const ItemsData = [
-  { id: 1, image: HeadPhonesImg, title: "HEADPHONES", link: "#" },
-  { id: 2, image: SpeakersImg, title: "SPEAKERS", link: "#" },
-  { id: 3, image: EarphonesImg, title: "EARPHONES", link: "#" },
+  { id: 1, image: HeadPhonesImg, title: "HEADPHONES", link: "/headphones" },
+  { id: 2, image: SpeakersImg, title: "SPEAKERS", link: "/speakers" },
+  { id: 3, image: EarphonesImg, title: "EARPHONES", link: "/earphones" },
 ];
 
 const FeatureItems = () => {
@@ -18,17 +18,18 @@ const FeatureItems = () => {
       {ItemsData.map((item) => (
         <div
           key={item.id}
-          className="bg-[#F1F1F1] flex flex-col items-center text-center justify-center gap-4 p-4 w-[350px] h-[204px] rounded-md relative"
+          className="bg-[#F1F1F1] flex flex-col items-center gap-4 w-[350px] h-[204px] rounded-md"
         >
-          <div className="absolute w-[50%] h-[50%] top-[-65px] min-h-[180px]">
+          <div className="absolute top-[0px] w-[220px] h-auto">
             <Image
               src={item.image}
               alt={item.title}
-              sizes="100vw"
-              className="w-full h-full"
+              // sizes="100vw"
+              className="w-auto h-auto"
             />
           </div>
-          <div className="flex flex-col gap-4 text-center items-center mt-[85px]">
+          {/* Category Navigation */}
+          <div className="relative flex flex-col gap-4 text-center items-center mt-[113px]">
             <h1 className="font-bold">{item.title}</h1>
             <Link href={item.link}>
               <div className="flex flex-row gap-2 items-center">

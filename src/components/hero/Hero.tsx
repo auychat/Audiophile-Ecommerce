@@ -20,7 +20,7 @@ const Hero = (): JSX.Element => {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Link href="#">
+          <Link href="/headphones/xx99-mark-two-headphones">
             <button className="font-bold text-[13px] trading-[1px] inline-block px-9 py-3.5 bg-button-primary text-white rounded-sm hover:bg-button-secondary transition duration-300 ease-in-out">
               SEE PRODUCT
             </button>

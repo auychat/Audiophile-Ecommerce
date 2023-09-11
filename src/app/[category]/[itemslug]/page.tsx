@@ -2,7 +2,6 @@
 import React from "react";
 import { productsData } from "@/pages/api/json/data";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import FeatureItems from "@/components/feature/FeatureItems";
 import BestGear from "@/components/feature/BestGear";
 import ProductImage from "@/components/productDetails/ProductImage";
@@ -27,7 +26,7 @@ const ProductItemsDetail: React.FC<pageProps> = ({ params }) => {
   const [cart, setCart] = React.useState<CartItem[]>([]);
 
   const data = productsData.find((product) => product.slug === params.itemslug);
-  console.log(params.itemslug)
+  console.log(params.itemslug);
 
   const handleAddToCart = () => {
     const cartItem: CartItem = {
@@ -56,6 +55,10 @@ const ProductItemsDetail: React.FC<pageProps> = ({ params }) => {
     }
   };
 
+  const handleGoback = () => {
+    window.history.back();
+  };
+
   // If no data, return 404 page
   if (!data) {
     return notFound();
@@ -63,11 +66,13 @@ const ProductItemsDetail: React.FC<pageProps> = ({ params }) => {
 
   return (
     <div className="max-w-[1110px] mx-auto flex flex-col">
-      <Link href="/headphones">
-        <h5 className="font-medium leading-[25px] opacity-50 pt-[77px]">
-          Go Back
-        </h5>
-      </Link>
+      <div>
+        <button type="button" onClick={handleGoback}>
+          <h5 className="font-medium leading-[25px] opacity-50 pt-[77px] hover:opacity-100 hover:font-bold transition-opacity duration-300">
+            Go Back
+          </h5>
+        </button>
+      </div>
 
       <div key={data.id} className=" flex flex-col gap-[10rem] pt-[56px]">
         {/* Fisrt Product Section */}

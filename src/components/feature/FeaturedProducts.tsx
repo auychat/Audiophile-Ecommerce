@@ -15,7 +15,7 @@ const FeaturedProducts = () => {
 
         {/* ZX9 SPEAKER Circle Image */}
         <div className="z-10 mt-24">
-          <Image src={ZX9Img} alt="ZX9 SPEAKER" width={409} height={493} />
+          <Image src={ZX9Img} alt="ZX9 SPEAKER" width={409} className="h-auto" />
         </div>
 
         {/* ZX9 SPEAKER Content */}
@@ -27,7 +27,7 @@ const FeaturedProducts = () => {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <Link href="#">
+          <Link href="/speakers/zx9-speaker">
             <button className="font-bold text-[13px] tracking-[1px] inline-block px-9 py-3.5 bg-black text-white rounded-sm hover:bg-[#4C4C4C] transition duration-300 ease-in-out">
               SEE PRODUCT
             </button>
@@ -44,7 +44,7 @@ const FeaturedProducts = () => {
           <h2 className="text-[28px] leading-normal tracking-[2px] font-bold text-black">
             ZX7 SPEAKER
           </h2>
-          <Link href="#">
+          <Link href="/speakers/zx7-speaker">
             <button className="font-bold text-[13px] tracking-[1px] inline-block px-9 py-3.5 border-[1px] border-black bg-none text-black rounded-sm hover:bg-black hover:text-white transition duration-300 ease-in-out">
               SEE PRODUCT
             </button>
@@ -58,7 +58,7 @@ const FeaturedProducts = () => {
 
         <div className="flex flex-col justify-center gap-8 bg-[#F1F1F1] w-full rounded-lg pl-[95px]">
           <h2 className="text-[28px] leading-normal tracking-[2px] font-bold text-black">YX1 EARPHONES</h2>
-          <Link href="#">
+          <Link href="/earphones/yx1-earphones">
             <button className="font-bold text-[13px] tracking-[1px] inline-block px-9 py-3.5 border-[1px] border-black bg-none text-black rounded-sm hover:bg-black hover:text-white transition duration-300 ease-in-out">
               SEE PRODUCT
             </button>
