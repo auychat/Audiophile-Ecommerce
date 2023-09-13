@@ -1,8 +1,12 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import CartIcon from "../../../public/assets/shared/desktop/icon-cart.svg";
 import Logo from "../../../public/assets/shared/desktop/logo.svg";
+import { useCart } from "@/context/CartContext";
+import CartModal from "../modal/CartModal";
 
 const Links = [
   { id: 1, title: "HOME", link: "/" },
@@ -12,6 +16,21 @@ const Links = [
 ];
 
 const Navbar = () => {
+  const { state, dispatch } = useCart();
+
+  // State to control the modal visibility
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  // Function to open the modal
+  const openCartModal = () => {
+    setIsModalOpen(true);
+  };
+
+  // Function to close the modal
+  const closeCartModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <header className="bg-[#191919] relative z-20">
       <nav className="max-w-[1110px] min-h-[96px] mx-auto flex flex-row justify-between justify-items-center item-center w-full py-4">
@@ -29,7 +48,7 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center cursor-pointer" onClick={openCartModal}>
           <Image
             src={CartIcon}
             alt="cart"
@@ -39,6 +58,9 @@ const Navbar = () => {
             className="w-[23.33px] h-[20px] rounded-lg"
           />
         </div>
+
+        {/* Render the modal if the isModalOpen is true */}
+        {isModalOpen && <CartModal closeModal={closeCartModal} />}
       </nav>
       <hr className="max-w-[1110px] mx-auto opacity-20" />
     </header>

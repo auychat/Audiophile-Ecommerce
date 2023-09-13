@@ -10,40 +10,52 @@ import QuantityInput from "@/components/productDetails/QuantityInput";
 import ProductFeatures from "@/components/productDetails/ProductFeatures";
 import ProductGallery from "@/components/productDetails/ProductGallery";
 import ProductSuggest from "@/components/productDetails/ProductSuggest";
+import { useCart } from "@/context/CartContext";
 
-type CartItem = {
-  productId: number;
-  productName: string;
+// Define the shape of the cart item
+interface ICartItem {
+  id: number;
+  imgUrl: string;
+  name: string;
+  price: number;
   quantity: number;
-};
+}
 
 interface pageProps {
   params: { itemslug: string };
 }
 
 const ProductItemsDetail: React.FC<pageProps> = ({ params }) => {
+  const { state, dispatch } = useCart();
   const [quantity, setQuantity] = React.useState(1);
-  const [cart, setCart] = React.useState<CartItem[]>([]);
+  const [cart, setCart] = React.useState<ICartItem[]>([]);
 
+  // Get the product data from the slug
   const data = productsData.find((product) => product.slug === params.itemslug);
-  console.log(params.itemslug);
+  // console.log(params.itemslug);
 
   const handleAddToCart = () => {
-    const cartItem: CartItem = {
-      productId: data?.id || 0,
-      productName: data?.name || "",
+    const cartItem: ICartItem = {
+      id: data?.id || 0,
+      imgUrl: data?.image?.mobile || "",
+      name: data?.name || "",
+      price: data?.price || 0,
       quantity: quantity,
     };
 
-    setCart((prevCart) => [...prevCart, cartItem]);
+    // Deprecated setCart but for test only
+    // setCart((prevCart) => [...prevCart, cartItem]);
+
+    // Dispatch the "ADD_TO_CART" action to add the item to the cart
+    dispatch({ type: "ADD_TO_CART", payload: cartItem });
 
     setQuantity(1);
   };
 
-  // For test only
-  React.useEffect(() => {
-    console.log("Updated cart from useEffect", cart);
-  }, [cart]);
+  // Deprecated this useEffect but for test only
+  // React.useEffect(() => {
+  //   console.log("Updated cart from useEffect", cart);
+  // }, [cart]);
 
   const handleIncrement = () => {
     setQuantity(quantity + 1);

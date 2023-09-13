@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/api/staticdata.js", "src/pages/api/json/data.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/pages/api/staticdata.js", "src/pages/api/json/data.js", "src/context/CartContext.JS"],
   "exclude": ["node_modules"]
 }
