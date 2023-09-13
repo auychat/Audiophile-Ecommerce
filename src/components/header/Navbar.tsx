@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -31,6 +31,9 @@ const Navbar = () => {
     setIsModalOpen(false);
   };
 
+  // Calculate the total number of different items in the cart
+  const totalDiffItems = state.cart.length;
+
   return (
     <header className="bg-[#191919] relative z-20">
       <nav className="max-w-[1110px] min-h-[96px] mx-auto flex flex-row justify-between justify-items-center item-center w-full py-4">
@@ -48,15 +51,28 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
-        <div className="flex items-center cursor-pointer" onClick={openCartModal}>
-          <Image
-            src={CartIcon}
-            alt="cart"
-            // width={23.33}
-            // height={20}
-            sizes="100vw"
-            className="w-[23.33px] h-[20px] rounded-lg"
-          />
+        <div
+          className="flex items-center cursor-pointer"
+          onClick={openCartModal}
+        >
+          <div className="relative py-2">
+            {/* Render the total number of different items in the cart */}
+            {totalDiffItems > 0 && (
+              <div className="t-0 absolute left-3">
+                <p className="flex h-2 w-2 items-center justify-center rounded-full bg-[#D87D4A] p-3 text-xs text-white transform translate-x-1/4 -translate-y-2/4">
+                  {totalDiffItems}
+                </p>
+              </div>
+            )}
+            <Image
+              src={CartIcon}
+              alt="cart"
+              // width={23.33}
+              // height={20}
+              sizes="100vw"
+              className="w-[23.33px] h-[20px] rounded-lg"
+            />
+          </div>
         </div>
 
         {/* Render the modal if the isModalOpen is true */}

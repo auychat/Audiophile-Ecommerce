@@ -83,7 +83,7 @@ const CartModal = ({ closeModal }: CartModalProps) => {
                           {item.name}
                         </h5>
                         <p className="text-[14px] font-bold opacity-50">
-                          ${item.price.toLocaleString()}
+                          $ {item.price.toLocaleString()}
                         </p>
                       </div>
                     </div>
@@ -121,7 +121,7 @@ const CartModal = ({ closeModal }: CartModalProps) => {
                 Total
               </p>
               <p className="text-[18px] font-bold">
-                {totalPrice.toLocaleString()}
+                $ {totalPrice.toLocaleString()}
               </p>
             </div>
 
