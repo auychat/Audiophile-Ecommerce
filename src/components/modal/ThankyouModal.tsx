@@ -13,6 +13,7 @@ const ThankyouModal: React.FC<ThankyouModalProps> = ({ grandTotal }) => {
 
   // Calculate the total number of different items in the cart
   const totalDiffItems = state.cart.length;
+  const moreOtherItems = totalDiffItems - 1;
 
   return (
     <div className="fixed inset-0 z-50 w-full max-h-full flex items-center justify-center bg-black bg-opacity-50 transition-opacity overflow-x-hidden overflow-y-auto">
@@ -35,7 +36,7 @@ const ThankyouModal: React.FC<ThankyouModalProps> = ({ grandTotal }) => {
           </p>
 
           {/* Summary Cart Items && Grand Total */}
-          <div className="flex flex-row w-[444px] h-[140px]">
+          <div className="flex flex-row w-[444px] min-h-[140px] h-full">
             {/* Left Group */}
             <div className="flex flex-col gap-3 w-[246px] p-6 bg-[#F1F1F1] rounded-l-lg">
               {/* Partition 1: Cart Item */}
@@ -46,7 +47,7 @@ const ThankyouModal: React.FC<ThankyouModalProps> = ({ grandTotal }) => {
                     alt={state.cart[0].name}
                     width={50}
                     height={50}
-                    className="rounded-lg"
+                    className="rounded-lg max-w-[50px] max-h-[50px]"
                   />
                   <div>
                     <h5 className="text-[15px] font-bold leading-[25px]">
@@ -72,11 +73,19 @@ const ThankyouModal: React.FC<ThankyouModalProps> = ({ grandTotal }) => {
               <hr className="w-[198px] mx-auto" />
 
               {/* Partition 3: Additional Items*/}
-              <div className="flex items-center justify-center">
-                <p className="text-[12px] font-bold tracking-[-0.21px] opacity-50">
-                  and 2 other item(s)
-                </p>
-              </div>
+              {moreOtherItems === 1 ? (
+                <div className="flex items-center justify-center">
+                  <p className="text-[12px] font-bold tracking-[-0.21px] opacity-50">
+                    and {moreOtherItems} other item
+                  </p>
+                </div>
+              ) : moreOtherItems > 1 ? (
+                <div className="flex items-center justify-center">
+                  <p className="text-[12px] font-bold tracking-[-0.21px] opacity-50">
+                    and {moreOtherItems} other items
+                  </p>
+                </div>
+              ) : null}
             </div>
             {/* End of Left Group */}
 
