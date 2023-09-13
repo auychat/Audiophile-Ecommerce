@@ -1,6 +1,7 @@
 import React from "react";
 import { useCart } from "@/context/CartContext";
 import Image from "next/image";
+import Link from "next/link";
 
 interface CartModalProps {
   closeModal: () => void;
@@ -127,12 +128,15 @@ const CartModal = ({ closeModal }: CartModalProps) => {
 
             {/* Checkout Button */}
             <div>
-              <button
-                type="button"
-                className="bg-[#D87D4A] text-white font-bold text-[13px] tracking-[1px] inline-block w-full py-3.5 rounded-sm hover:bg-[#FBAF85] transition duration-300 ease-in-out"
-              >
-                CHECKOUT
-              </button>
+              <Link href="/checkout">
+                <button
+                  type="button"
+                  onClick={closeModal}
+                  className="bg-[#D87D4A] text-white font-bold text-[13px] tracking-[1px] inline-block w-full py-3.5 rounded-sm hover:bg-[#FBAF85] transition duration-300 ease-in-out"
+                >
+                  CHECKOUT
+                </button>
+              </Link>
             </div>
           </div>
         </div>
