@@ -16,7 +16,7 @@ const Links = [
 ];
 
 const Navbar = () => {
-  const { state, dispatch } = useCart();
+  const { state } = useCart();
 
   // State to control the modal visibility
   const [isModalOpen, setIsModalOpen] = React.useState(false);
