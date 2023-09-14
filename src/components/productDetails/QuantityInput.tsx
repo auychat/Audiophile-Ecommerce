@@ -30,7 +30,7 @@ const QuantityInput: React.FC<QuantityInputProps> = ({
           id="quantity"
           value={quantity}
           onChange={(e) => onSetQuantity(parseInt(e.target.value))}
-          className="h-full w-8 text-center text-[13px] font-bold tracking-[1px] outline-none bg-transparent"
+          className="h-full w-8 text-center text-[13px] font-bold tracking-[1px] border-none outline-none bg-transparent"
         />
         <button
           type="button"

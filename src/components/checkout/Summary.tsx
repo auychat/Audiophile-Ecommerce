@@ -6,8 +6,11 @@ import { useCart } from "@/context/CartContext";
 import Image from "next/image";
 import ThankyouModal from "../modal/ThankyouModal";
 
+interface SummaryProps {
+  onSubmit: () => void;
+}
 
-const Summary = () => {
+const Summary: React.FC<SummaryProps> = ({ onSubmit }) => {
   const { state } = useCart();
 
   // Calculate the total price of the items in the cart
@@ -20,18 +23,18 @@ const Summary = () => {
   const vat = Math.floor(totalPrice * 0.2);
   const grandTotal = totalPrice + shippingCost + vat;
 
-    // State to control the modal visibility
-    const [isModalOpen, setIsModalOpen] = React.useState(false);
+  // State to control the modal visibility
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
 
-    // Function to open the modal
-    const openCartModal = () => {
-      setIsModalOpen(true);
-    };
-  
-    // Function to close the modal
-    const closeCartModal = () => {
-      setIsModalOpen(false);
-    };
+  // Function to open the modal
+  const openCartModal = () => {
+    setIsModalOpen(true);
+  };
+
+  // Function to close the modal
+  const closeCartModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="flex flex-col gap-8">
@@ -121,7 +124,10 @@ const Summary = () => {
         <Link href="#">
           <button
             type="button"
-            onClick={openCartModal}
+            onClick={() => {
+              openCartModal();
+              onSubmit();
+            }}
             className="bg-[#D87D4A] text-white font-bold text-[13px] tracking-[1px] inline-block w-full py-3.5 rounded-sm hover:bg-[#FBAF85] transition duration-300 ease-in-out"
           >
             CONTINUE & PAY
@@ -129,7 +135,7 @@ const Summary = () => {
         </Link>
       </div>
       {/* Render the modal if the isModalOpen is true */}
-      {isModalOpen && <ThankyouModal grandTotal={grandTotal}  />}
+      {isModalOpen && <ThankyouModal grandTotal={grandTotal} />}
     </div>
   );
 };
