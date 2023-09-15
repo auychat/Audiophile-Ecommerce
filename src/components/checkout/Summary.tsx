@@ -22,7 +22,7 @@ const Summary: React.FC<SummaryProps> = ({ onSubmit, paymentButton }) => {
 
   const shippingCost = 50;
   const vat = Math.floor(totalPrice * 0.2);
-  const grandTotal = totalPrice + shippingCost + vat;
+  const grandTotal = totalPrice + shippingCost;
 
   // State to control the modal visibility
   const [isModalOpen, setIsModalOpen] = React.useState(false);

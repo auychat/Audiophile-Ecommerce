@@ -42,7 +42,7 @@ const PaymentDetails: React.FC<PaymentDetailsProps> = ({
               }}
               className="form-radio w-5 h-5 text-[#D87D4A] checked:bg-[#D87D4A] checked:border-transparent cursor-pointer focus:ring-[#D87D4A]"
             />
-            <label className="text-[12px] tracking-[-0.21px] font-bold">
+            <label htmlFor="e-Money" className="text-[12px] tracking-[-0.21px] font-bold">
               e-Money
             </label>
           </div>
@@ -60,7 +60,7 @@ const PaymentDetails: React.FC<PaymentDetailsProps> = ({
               }}
               className="form-radio w-5 h-5 text-[#D87D4A] checked:bg-[#D87D4A] checked:border-transparent cursor-pointer focus:ring-[#D87D4A]"
             />
-            <label className="text-[12px] tracking-[-0.21px] font-bold">
+            <label htmlFor="cash-on-delivery" className="text-[12px] tracking-[-0.21px] font-bold">
               Cash on Delivery
             </label>
           </div>

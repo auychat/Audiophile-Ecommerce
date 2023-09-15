@@ -9,7 +9,7 @@ interface CartModalProps {
 
 const CartModal = ({ closeModal }: CartModalProps) => {
   const { state, dispatch } = useCart();
-  console.log("state.cart", state.cart);
+  // console.log("state.cart", state.cart);
 
   // Calculate the total number of different items in the cart
   const totalDiffItems = state.cart.length;
@@ -77,7 +77,7 @@ const CartModal = ({ closeModal }: CartModalProps) => {
                         alt={item.name}
                         width={64}
                         height={64}
-                        className="rounded-lg"
+                        className="rounded-lg max-w-[64px] max-h-[64px]"
                       />
                       <div>
                         <h5 className="text-[15px] font-bold leading-[25px]">

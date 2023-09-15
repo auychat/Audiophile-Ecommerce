@@ -80,7 +80,7 @@ const ProductItemsDetail: React.FC<pageProps> = ({ params }) => {
     <div className="max-w-[1110px] mx-auto flex flex-col">
       <div>
         <button type="button" onClick={handleGoback}>
-          <h5 className="font-medium leading-[25px] opacity-50 pt-[77px] hover:opacity-100 hover:font-bold transition-opacity duration-300">
+          <h5 className="font-medium leading-[25px] opacity-50 pt-[77px] hover:opacity-100 hover:font-bold hover:text-[#D87D4A] transition-opacity duration-300">
             Go Back
           </h5>
         </button>

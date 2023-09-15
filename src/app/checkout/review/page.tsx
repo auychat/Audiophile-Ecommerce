@@ -4,8 +4,11 @@ import Image from "next/image";
 import React from "react";
 import cashOnDeliveryIcon from "../../../../public/assets/checkout/icon-cash-on-delivery.svg";
 import Summary from "@/components/checkout/Summary";
+import { useRouter } from "next/navigation";
 
 const OrderReview = () => {
+  const router = useRouter();
+
   // Get the data from the session storage
   const checkoutFormDataString = sessionStorage.getItem("checkoutFormData");
 
@@ -41,7 +44,7 @@ const OrderReview = () => {
       eMoneyPIN,
     } = checkoutFormData);
   } else {
-    console.error("No checkout data found in session storage");
+    // console.error("No checkout data found in session storage");
   }
 
   const [submitResult, setSubmitResult] = React.useState("pending");
@@ -80,7 +83,8 @@ const OrderReview = () => {
 
     setSubmitResult("success");
     sessionStorage.removeItem("checkoutFormData");
-    console.log("Session Storage has been removed");
+    // console.log("Session Storage has been removed");
+    router.push("/");
   };
 
   // Function to go back to the previous page
@@ -127,6 +131,7 @@ const OrderReview = () => {
                     id="name"
                     name="name"
                     type="text"
+                    autoComplete="name"
                     value={name || ""}
                     readOnly
                     className="border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold opacity-40 px-6 py-[17px] rounded-lg focus:outline-none focus:border-[#CFCFCF] focus:ring-[#CFCFCF] cursor-default"
@@ -148,6 +153,7 @@ const OrderReview = () => {
                     id="email"
                     name="email"
                     type="email"
+                    autoComplete="email"
                     value={email || ""}
                     readOnly
                     className="border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold opacity-40 px-6 py-[17px] rounded-lg focus:outline-none focus:border-[#CFCFCF] focus:ring-[#CFCFCF] cursor-default"
@@ -169,6 +175,7 @@ const OrderReview = () => {
                 <input
                   id="phone"
                   name="phone"
+                  autoComplete="phone"
                   type="tel"
                   value={phone || ""}
                   readOnly
@@ -186,7 +193,7 @@ const OrderReview = () => {
               {/* Address */}
               <div className="flex flex-col gap-2 w-full h-full">
                 <label
-                  htmlFor="Address"
+                  htmlFor="address"
                   className="flex flex-row items center justify-between"
                 >
                   <p className="text-[12px] tracking-[-0.21px] font-bold">
@@ -197,6 +204,7 @@ const OrderReview = () => {
                   id="address"
                   name="address"
                   type="text"
+                  autoComplete="address"
                   value={address || ""}
                   readOnly
                   className="border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold opacity-40 px-6 py-[17px] rounded-lg focus:outline-none focus:border-[#CFCFCF] focus:ring-[#CFCFCF] cursor-default"
@@ -207,7 +215,7 @@ const OrderReview = () => {
                 {/* ZipCode */}
                 <div className="flex flex-col gap-2 w-[309px] h-full">
                   <label
-                    htmlFor="zipcode"
+                    htmlFor="postal-code"
                     className="flex flex-row items center justify-between"
                   >
                     <p className="text-[12px] tracking-[-0.21px] font-bold">
@@ -215,9 +223,10 @@ const OrderReview = () => {
                     </p>
                   </label>
                   <input
-                    id="zipcode"
+                    id="postal-code"
                     name="zipcode"
                     type="text"
+                    autoComplete="postal-code"
                     value={zipcode || ""}
                     readOnly
                     className="border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold opacity-40 px-6 py-[17px] rounded-lg focus:outline-none focus:border-[#CFCFCF] focus:ring-[#CFCFCF] cursor-default"
@@ -228,7 +237,7 @@ const OrderReview = () => {
                 {/* City */}
                 <div className="flex flex-col gap-2 w-[309px] h-full">
                   <label
-                    htmlFor="city"
+                    htmlFor="address-level2"
                     className="flex flex-row items center justify-between"
                   >
                     <p className="text-[12px] tracking-[-0.21px] font-bold">
@@ -236,9 +245,10 @@ const OrderReview = () => {
                     </p>
                   </label>
                   <input
-                    id="city"
+                    id="address-level2"
                     name="city"
                     type="text"
+                    autoComplete="address-level2"
                     value={city || ""}
                     readOnly
                     className="border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold opacity-40 px-6 py-[17px] rounded-lg focus:outline-none focus:border-[#CFCFCF] focus:ring-[#CFCFCF] cursor-default"
@@ -262,6 +272,7 @@ const OrderReview = () => {
                   id="country"
                   name="country"
                   type="text"
+                  autoComplete="country"
                   value={country || ""}
                   readOnly
                   className="border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold opacity-40 px-6 py-[17px] rounded-lg focus:outline-none focus:border-[#CFCFCF] focus:ring-[#CFCFCF] cursor-default"
@@ -298,7 +309,7 @@ const OrderReview = () => {
                       readOnly
                       className="form-radio w-5 h-5 text-[#D87D4A] checked:bg-[#D87D4A] checked:border-transparent focus:ring-[#D87D4A] cursor-default"
                     />
-                    <label className="text-[12px] tracking-[-0.21px] font-bold">
+                    <label htmlFor="e-Money" className="text-[12px] tracking-[-0.21px] font-bold">
                       e-Money
                     </label>
                   </div>
@@ -313,7 +324,7 @@ const OrderReview = () => {
                       readOnly
                       className="form-radio w-5 h-5 text-[#D87D4A] checked:bg-[#D87D4A] checked:border-transparent focus:ring-[#D87D4A] cursor-default"
                     />
-                    <label className="text-[12px] tracking-[-0.21px] font-bold">
+                    <label htmlFor="cash-on-delivery" className="text-[12px] tracking-[-0.21px] font-bold">
                       Cash on Delivery
                     </label>
                   </div>

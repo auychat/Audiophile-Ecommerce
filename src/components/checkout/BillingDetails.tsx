@@ -38,6 +38,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ formik }) => {
             id="name"
             name="name"
             type="text"
+            autoComplete="name"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.name}
@@ -87,6 +88,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ formik }) => {
             id="email"
             name="email"
             type="email"
+            autoComplete="email"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.email}
@@ -140,6 +142,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ formik }) => {
           id="phone"
           name="phone"
           type="tel"
+          autoComplete="tel"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.phone}

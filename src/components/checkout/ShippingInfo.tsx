@@ -13,7 +13,7 @@ const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
               {/* Address */}
               <div className="flex flex-col gap-2 w-full h-full">
                 <label
-                  htmlFor="Address"
+                  htmlFor="address"
                   className="flex flex-row items center justify-between"
                 >
                   {/* Conditional Redering for Address Label */}
@@ -39,6 +39,7 @@ const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
                   id="address"
                   name="address"
                   type="text"
+                  autoComplete="address"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.address}
@@ -65,7 +66,7 @@ const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
                 {/* ZipCode */}
                 <div className="flex flex-col gap-2 w-[309px] h-full">
                   <label
-                    htmlFor="zipcode"
+                    htmlFor="postal-code"
                     className="flex flex-row items center justify-between"
                   >
                     {/* Conditional Redering for ZipCode Label */}
@@ -88,9 +89,10 @@ const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
                     ) : null}
                   </label>
                   <input
-                    id="zipcode"
+                    id="postal-code"
                     name="zipcode"
                     type="text"
+                    autoComplete='postal-code'
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.zipcode}
@@ -117,7 +119,7 @@ const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
                 {/* City */}
                 <div className="flex flex-col gap-2 w-[309px] h-full">
                   <label
-                    htmlFor="city"
+                    htmlFor="address-level2"
                     className="flex flex-row items center justify-between"
                   >
                     {/* Conditional Redering for City Label */}
@@ -140,9 +142,10 @@ const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
                     ) : null}
                   </label>
                   <input
-                    id="city"
+                    id="address-level2"
                     name="city"
                     type="text"
+                    autoComplete='address-level2'
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.city}
@@ -197,6 +200,7 @@ const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
                   id="country"
                   name="country"
                   type="text"
+                  autoComplete='country'
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.country}
