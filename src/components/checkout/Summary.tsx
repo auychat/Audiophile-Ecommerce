@@ -7,10 +7,11 @@ import Image from "next/image";
 import ThankyouModal from "../modal/ThankyouModal";
 
 interface SummaryProps {
-  onSubmit: () => void;
+  onSubmit?: () => void;
+  paymentButton: string;
 }
 
-const Summary: React.FC<SummaryProps> = ({ onSubmit }) => {
+const Summary: React.FC<SummaryProps> = ({ onSubmit, paymentButton }) => {
   const { state } = useCart();
 
   // Calculate the total price of the items in the cart
@@ -36,6 +37,16 @@ const Summary: React.FC<SummaryProps> = ({ onSubmit }) => {
     setIsModalOpen(false);
   };
 
+  // Function to handle the payment button text
+  const paymentButtonTextHandler = () => {
+    if(paymentButton === "Continue"){
+      return "CONTINUE"
+    }
+
+    if(paymentButton === "Pay"){
+      return "CONTINUE & PAY"
+    }
+  }
   return (
     <div className="flex flex-col gap-8">
       {/* Summary Title */}
@@ -125,12 +136,12 @@ const Summary: React.FC<SummaryProps> = ({ onSubmit }) => {
           <button
             type="button"
             onClick={() => {
-              openCartModal();
-              onSubmit();
+              if(paymentButton === "Pay") {openCartModal()};
+              onSubmit?.();
             }}
             className="bg-[#D87D4A] text-white font-bold text-[13px] tracking-[1px] inline-block w-full py-3.5 rounded-sm hover:bg-[#FBAF85] transition duration-300 ease-in-out"
           >
-            CONTINUE & PAY
+            {paymentButtonTextHandler()}
           </button>
         </Link>
       </div>

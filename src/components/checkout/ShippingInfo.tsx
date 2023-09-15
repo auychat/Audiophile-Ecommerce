@@ -42,7 +42,7 @@ const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   placeholder="1137 Williams Avenue"
-                  className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold opacity-40 px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
+                  className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold placeholder-gray-300  px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
                     // Add styles when the address field is touched
                     formik.values.address
                       ? "text-[14px] font-bold tracking-[-0.25px] opacity-100"
@@ -94,7 +94,7 @@ const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
                     onBlur={formik.handleBlur}
                     value={formik.values.zipcode}
                     placeholder="10001"
-                    className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold opacity-40 px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
+                    className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold placeholder-gray-300  px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
                       // Add styles when the zipcode field is touched
                       formik.values.zipcode
                         ? "text-[14px] font-bold tracking-[-0.25px] opacity-100"
@@ -146,7 +146,7 @@ const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
                     onBlur={formik.handleBlur}
                     value={formik.values.city}
                     placeholder="New York"
-                    className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold opacity-40 px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
+                    className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold placeholder-gray-300  px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
                       // Add styles when the city field is touched
                       formik.values.city
                         ? "text-[14px] font-bold tracking-[-0.25px] opacity-100"
@@ -200,7 +200,7 @@ const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
                   onBlur={formik.handleBlur}
                   value={formik.values.country}
                   placeholder="United States"
-                  className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold opacity-40 px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
+                  className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold placeholder-gray-300  px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
                     // Add styles when the country field is touched
                     formik.values.country
                       ? "text-[14px] font-bold tracking-[-0.25px] opacity-100"

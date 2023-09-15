@@ -5,7 +5,6 @@ import React from "react";
 import cashOnDeliveryIcon from "../../../public/assets/checkout/icon-cash-on-delivery.svg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import PaymentDetails from "@/components/checkout/PaymentDetails";
 import ShippingInfo from "@/components/checkout/ShippingInfo";
@@ -96,7 +95,7 @@ const Checkout = () => {
       // Display the formik values as an alert
       alert(JSON.stringify(values, null, 2));
 
-      // Convert the formik values to query string
+      // Convert the formik values to query string and redirect to the review page
       const queryString = Object.keys(values)
         .map((key) => {
           return `${key}=${encodeURIComponent((values as any)[key])}`;
@@ -112,6 +111,7 @@ const Checkout = () => {
 
   return (
     <div className="bg-[#F0F0F0]">
+      {/* GO BACK */}
       <div className="max-w-[1110px] mx-auto pt-[79px]">
         <button type="button" onClick={handleGoback}>
           <h5 className="font-medium leading-[25px] opacity-50 hover:opacity-100 hover:text-[#D87D4A] hover:font-bold transition-opacity duration-300">
@@ -145,7 +145,7 @@ const Checkout = () => {
 
         {/* RIGHT COMPONENT */}
         <div className="max-w-[350px] w-full h-full bg-white px-8 py-8 rounded-xl mt-[38px]">
-          <Summary onSubmit={formik.handleSubmit} />
+          <Summary onSubmit={formik.handleSubmit} paymentButton="Continue" />
         </div>
       </div>
     </div>

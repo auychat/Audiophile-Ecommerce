@@ -42,11 +42,10 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ formik }) => {
             onBlur={formik.handleBlur}
             value={formik.values.name}
             placeholder="Alexei Ward"
-            className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold opacity-40 px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
+            className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold placeholder-gray-300 px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
               // Add styles when the name field is touched
-              formik.values.name
-                ? "text-[14px] font-bold tracking-[-0.25px] opacity-100"
-                : " "
+              formik.values.name? "text-[14px] font-bold tracking-[-0.25px] opacity-100"
+                : ""
             } ${
               // Add styles when the name field is touched and there is an error
               formik.touched.name && formik.errors.name
@@ -92,7 +91,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ formik }) => {
             onBlur={formik.handleBlur}
             value={formik.values.email}
             placeholder="alexei@mail.com"
-            className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold opacity-40 px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
+            className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold placeholder-gray-300  px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
               // Add styles when the email field is touched
               formik.values.email
                 ? "text-[14px] font-bold tracking-[-0.25px] opacity-100"
@@ -145,7 +144,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ formik }) => {
           onBlur={formik.handleBlur}
           value={formik.values.phone}
           placeholder="+1 202-555-0136"
-          className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold opacity-40 px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
+          className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold placeholder-gray-300  px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
             // Add styles when the phone field is touched
             formik.values.phone
               ? "text-[14px] font-bold tracking-[-0.25px] opacity-100"

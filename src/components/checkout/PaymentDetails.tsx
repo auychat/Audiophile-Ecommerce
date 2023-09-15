@@ -107,7 +107,7 @@ const PaymentDetails: React.FC<PaymentDetailsProps> = ({
             onBlur={formik.handleBlur}
             value={formik.values.eMoneyNumber}
             placeholder="238521993"
-            className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold opacity-40 px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
+            className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold placeholder-gray-300 px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
               // Add styles when the e-Money Number field is touched
               formik.values.eMoneyNumber
                 ? "text-[14px] font-bold tracking-[-0.25px] opacity-100"
@@ -158,7 +158,7 @@ const PaymentDetails: React.FC<PaymentDetailsProps> = ({
             onBlur={formik.handleBlur}
             value={formik.values.eMoneyPIN}
             placeholder="6891"
-            className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold opacity-40 px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
+            className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold placeholder-gray-300 px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
               // Add styles when the e-Money PIN field is touched
               formik.values.eMoneyPIN
                 ? "text-[14px] font-bold tracking-[-0.25px] opacity-100"
