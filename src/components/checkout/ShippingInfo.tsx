@@ -41,6 +41,7 @@ const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
                   type="text"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
+                  value={formik.values.address}
                   placeholder="1137 Williams Avenue"
                   className={`border border-[#CFCFCF] text-sm tracking-[-0.25px] font-bold placeholder-gray-300  px-6 py-[17px] rounded-lg focus:border-[#D87D4A] focus:ring-[#D87D4A] transition-all duration-300 focus:outline-none ${
                     // Add styles when the address field is touched

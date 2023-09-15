@@ -1,25 +1,87 @@
 "use client";
 
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
 import React from "react";
 import cashOnDeliveryIcon from "../../../../public/assets/checkout/icon-cash-on-delivery.svg";
 import Summary from "@/components/checkout/Summary";
 
 const OrderReview = () => {
-  const searchParams = useSearchParams();
+  // Get the data from the session storage
+  const checkoutFormDataString = sessionStorage.getItem("checkoutFormData");
 
-  const name = searchParams?.get("name");
-  const email = searchParams?.get("email");
-  const phone = searchParams?.get("phone");
-  const address = searchParams?.get("address");
-  const city = searchParams?.get("city");
-  const country = searchParams?.get("country");
-  const zipcode = searchParams?.get("zipcode");
-  const paymentMethod = searchParams?.get("paymentMethod");
-  const isEMoney = searchParams?.get("isEMoney");
-  const eMoneyNumber = searchParams?.get("eMoneyNumber");
-  const eMoneyPIN = searchParams?.get("eMoneyPIN");
+  // Declare the variables
+  let name,
+    email,
+    phone,
+    address,
+    zipcode,
+    city,
+    country,
+    paymentMethod,
+    isEMoney,
+    eMoneyNumber,
+    eMoneyPIN;
+
+  // Parse the data to JSON
+  if (checkoutFormDataString !== null) {
+    const checkoutFormData = JSON.parse(checkoutFormDataString);
+
+    // Destructure the data
+    ({
+      name,
+      email,
+      phone,
+      address,
+      zipcode,
+      city,
+      country,
+      paymentMethod,
+      isEMoney,
+      eMoneyNumber,
+      eMoneyPIN,
+    } = checkoutFormData);
+  } else {
+    console.error("No checkout data found in session storage");
+  }
+
+  const [submitResult, setSubmitResult] = React.useState("pending");
+
+  const handleSubmit = async () => {
+    const getSessionStorageData = sessionStorage.getItem("checkoutFormData");
+    let checkoutFormData: {
+      name: string;
+      email: string;
+      phone: string;
+      address: string;
+      zipcode: string;
+      city: string;
+      country: string;
+      paymentMethod: string;
+      isEMoney: boolean;
+      eMoneyNumber: string;
+      eMoneyPIN: string;
+    };
+
+    if (getSessionStorageData !== null) {
+      checkoutFormData = JSON.parse(getSessionStorageData);
+    } else {
+      console.error("No checkout data found in session storage");
+      return;
+    }
+
+    alert(JSON.stringify(checkoutFormData, null, 2));
+
+    // Convert the formik values to query string and redirect to the review page
+    // const queryString = Object.keys(checkoutFormData)
+    //   .map((key) => {
+    //     return `${key}=${encodeURIComponent((checkoutFormData as any)[key])}`;
+    //   })
+    //   .join("&");
+
+    setSubmitResult("success");
+    sessionStorage.removeItem("checkoutFormData");
+    console.log("Session Storage has been removed");
+  };
 
   // Function to go back to the previous page
   const handleGoback = () => {
@@ -330,7 +392,7 @@ const OrderReview = () => {
 
         {/* RIGHT COMPONENT */}
         <div className="max-w-[350px] w-full h-full bg-white px-8 py-8 rounded-xl mt-[38px]">
-          <Summary  paymentButton="Pay" />
+          <Summary onSubmit={handleSubmit} paymentButton="Pay" />
         </div>
       </div>
     </div>

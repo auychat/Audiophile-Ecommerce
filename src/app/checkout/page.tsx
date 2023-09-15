@@ -1,7 +1,7 @@
 "use client";
 
 import Summary from "@/components/checkout/Summary";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import cashOnDeliveryIcon from "../../../public/assets/checkout/icon-cash-on-delivery.svg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -25,11 +25,6 @@ interface IFormValues {
 }
 
 const Checkout = () => {
-  // Function to go back to the previous page
-  const handleGoback = () => {
-    window.history.back();
-  };
-
   const router = useRouter();
 
   // Formik
@@ -87,27 +82,44 @@ const Checkout = () => {
     }
   };
 
+  // Get the stored formik values from session storage
+  const storedFormikValues = JSON.parse(
+    sessionStorage.getItem("checkoutFormData") || "null"
+  );
+
+  // State to store the final formik values before redirecting to the review page
+  const [finalFormikValues, setFinalFormikValues] =
+    useState<IFormValues>(initialValues);
+
   // Formik Hook to handle form values and validation
   const formik = useFormik<IFormValues>({
-    initialValues,
+    // For merge the initial values with the stored formik values
+    initialValues: { ...initialValues, ...storedFormikValues },
     validationSchema,
     onSubmit: (values) => {
-      // Display the formik values as an alert
-      alert(JSON.stringify(values, null, 2));
+      setFinalFormikValues(values);
 
-      // Convert the formik values to query string and redirect to the review page
-      const queryString = Object.keys(values)
-        .map((key) => {
-          return `${key}=${encodeURIComponent((values as any)[key])}`;
-        })
-        .join("&");
-
-      router.push(`/checkout/review?${queryString}`);
+      router.push(`/checkout/review`);
     },
   });
 
+  // Use useEffect to update session storage whener the formik values change
+  useEffect(() => {
+    sessionStorage.setItem("checkoutFormData", JSON.stringify(formik.values));
+  }, [formik.values]);
+
+  // Function to go back to the previous page
+  const handleGoback = () => {
+    // Check if there are finalFormikValues, if so, set them back to formik.values
+    if (finalFormikValues) {
+      formik.setValues(finalFormikValues);
+    }
+    window.history.back();
+  };
+
   // Log form values as they change from the formik state
-  console.log("Formik values", formik.values);
+  // console.log("Formik values", formik.values);
+  // console.log("finalFormikValues", finalFormikValues);
 
   return (
     <div className="bg-[#F0F0F0]">
