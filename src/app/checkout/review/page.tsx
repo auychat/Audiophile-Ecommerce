@@ -294,7 +294,7 @@ const OrderReview = () => {
                       name="paymentMethod"
                       type="radio"
                       value="e-Money"
-                      checked={isEMoney === "true"}
+                      checked={isEMoney === true}
                       readOnly
                       className="form-radio w-5 h-5 text-[#D87D4A] checked:bg-[#D87D4A] checked:border-transparent focus:ring-[#D87D4A] cursor-default"
                     />
@@ -309,7 +309,7 @@ const OrderReview = () => {
                       name="paymentMethod"
                       type="radio"
                       value="cash-on-delivery"
-                      checked={isEMoney === "false"}
+                      checked={isEMoney === false}
                       readOnly
                       className="form-radio w-5 h-5 text-[#D87D4A] checked:bg-[#D87D4A] checked:border-transparent focus:ring-[#D87D4A] cursor-default"
                     />

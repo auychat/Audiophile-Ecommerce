@@ -36,7 +36,7 @@ const Checkout = () => {
     zipcode: "",
     city: "",
     country: "",
-    paymentMethod: "",
+    paymentMethod: "e-Money",
     isEMoney: true,
     eMoneyNumber: "",
     eMoneyPIN: "",
