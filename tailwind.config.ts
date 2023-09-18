@@ -33,6 +33,13 @@ const config: Config = {
         shake: "shake 1s ease-in-out",
       },
     },
+    screens: {
+      xs: { max: "480px" },
+      sm: { min: "481px", max: "768px" },
+      md: { min: "769px", max: "1024px" },
+      lg: { min: "1025px", max: "1280px" },
+      xl: { min: "1281px"},
+    },
   },
   plugins: [require("@tailwindcss/forms")],
 };
