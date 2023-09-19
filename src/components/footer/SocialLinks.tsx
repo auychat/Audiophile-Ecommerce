@@ -3,8 +3,8 @@ import React from "react";
 
 const SocialLinks = () => {
   return (
-    <div className="flex items-center">
-      <div className="flex flex-row items-center gap-8 justify-center ">
+    <div className="flex items-center xs:mt-12">
+      <div className="flex flex-row items-center gap-8 justify-center sm:gap-4 ">
         {/* FACEBOOK */}
         <Link
           href="http://www.facebook.com"

@@ -9,7 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "hero-img": 'url("/assets/home/desktop/image-hero.jpg")',
+        "hero-img-desktop": 'url("/assets/home/desktop/image-hero.jpg")',
+        "hero-img-tablet": 'url("/assets/home/tablet/image-header.jpg")',
+        "hero-img-mobile": 'url("/assets/home/mobile/image-header.jpg")',
         "pattern-circles": 'url("/assets/home/desktop/pattern-circles.svg")',
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -34,11 +36,11 @@ const config: Config = {
       },
     },
     screens: {
-      xs: { max: "480px" },
-      sm: { min: "481px", max: "768px" },
+      xs: { max: "512px" },
+      sm: { min: "512px", max: "768px" },
       md: { min: "769px", max: "1024px" },
       lg: { min: "1025px", max: "1280px" },
-      xl: { min: "1281px"},
+      xl: { min: "1281px" },
     },
   },
   plugins: [require("@tailwindcss/forms")],

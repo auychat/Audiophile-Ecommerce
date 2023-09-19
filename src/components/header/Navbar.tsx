@@ -74,7 +74,7 @@ const Navbar = () => {
         </div>
 
         {/* Logo */}
-        <div className="flex items-center">
+        <div className="flex items-center sm:pl-10 sm:mr-[50%]">
           <Link href="/" className="hover:cursor-pointer">
             <Image src={Logo} alt="Audiophile Logo" />
           </Link>

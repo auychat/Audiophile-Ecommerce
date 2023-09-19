@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <div className="pt-[120px] pb-[168px]">
+      <div className="pt-[120px] pb-[168px] xs:pt-[92px] xs:pb-[120px] sm:pt-[100px] sm:pb-[96px]">
         <FeatureItems />
       </div>
       <FeaturedProducts />

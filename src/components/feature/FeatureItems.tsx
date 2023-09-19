@@ -14,13 +14,13 @@ const ItemsData = [
 
 const FeatureItems = () => {
   return (
-    <div className="relative max-w-[1110px] mx-auto h-[284px] flex flex-row justify-between items-end gap-7">
+    <div className="relative max-w-[1110px] mx-auto h-[284px] flex flex-row justify-between items-end gap-16 sm:h-[217px] sm:w-[91.75%] sm:gap-3 xs:w-[91.5%] xs:h-full xs:flex-col xs:items-center xs:gap-[68px] md:w-[91.75%] lg:w-[91.75%]">
       {ItemsData.map((item) => (
         <div
           key={item.id}
-          className="bg-[#F1F1F1] flex flex-col items-center gap-4 w-[350px] h-[204px] rounded-md"
+          className="bg-[#F1F1F1] flex flex-col items-center gap-4 w-[350px] h-[204px] rounded-md sm:w-[223px] sm:h-[165px] xs:relative xs:w-[100%] xs:h-[165px]"
         >
-          <div className="absolute top-[0px] w-[220px] h-auto">
+          <div className="absolute top-[0px] w-[220px] h-auto sm:w-[165px] xs:w-[180px] xs:top-[-65px]">
             <Image
               src={item.image}
               alt={item.title}
@@ -29,7 +29,7 @@ const FeatureItems = () => {
             />
           </div>
           {/* Category Navigation */}
-          <div className="relative flex flex-col gap-4 text-center items-center mt-[113px]">
+          <div className="relative flex flex-col gap-4 text-center items-center mt-[113px] sm:mt-[85px] xs:mt-[80px]">
             <h1 className="font-bold">{item.title}</h1>
             <Link href={item.link}>
               <div className="flex flex-row gap-2 items-center">
