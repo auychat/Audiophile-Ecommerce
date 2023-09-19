@@ -11,7 +11,7 @@ export default function Home() {
         <FeatureItems />
       </div>
       <FeaturedProducts />
-      <div className="pt-[200px] pb-[200px]">
+      <div className="pt-[200px] pb-[200px] xs:py-[120px] sm:py-[100px] md:py-[100px]">
         <BestGear />
       </div>
     </main>
