@@ -41,7 +41,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-[#191919] relative z-20">
-      <nav className="xl:max-w-[1110px] min-h-[96px] mx-auto flex flex-row justify-between justify-items-center item-center w-full py-4 lg:w-[91.75%] md:max-w-[91.75%] sm:max-w-[91.75%] xs:max-w-[92%]">
+      <nav className="xl:max-w-[1110px] min-h-[96px] mx-auto flex flex-row justify-between justify-items-center item-center w-full py-4 lg:w-[91.75%] md:max-w-[91.75%] sm:max-w-[91.75%] xs:min-h-[90px] xs:max-w-[92%]">
         {/*Hamburger */}
 
         <div
@@ -61,7 +61,7 @@ const Navbar = () => {
 
           {/* Mobile Navigation Links will be rendered if isNavOpen is true */}
           {isNavOpen && (
-            <div className="absolute flex flex-col items-center justify-start gap-8 top-[97px] left-0 pt-28 h-[50vh] w-[70%] max-w-[250px] bg-zinc-800 bg-opacity-90 rounded-r-lg ">
+            <div className="absolute flex flex-col items-center justify-start gap-8 top-[90px] left-0 pt-16 h-[40vh] w-[50%] max-w-[250px] bg-[#191919] bg-opacity-95 rounded-r-lg ">
               {Links.map((link) => (
                 <Link href={link.link} key={link.id}>
                   <p className="text-white font-bold text-[13px] leading-[25px] tracking-[2px] hover:text-[#D87D4A] transition-colors duration-300 ">

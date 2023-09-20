@@ -37,8 +37,8 @@ const Category: React.FC<pageProps> = ({ params }) => {
     <div>
       {/* TITLE */}
       <div className="bg-[#191919]">
-        <div className="max-w-[1110px] h-[240px] mx-auto flex text-center justify-center items-center">
-          <h1 className="text-white font-bold text-[40px] leading-[44px] tracking-[1.43px]">
+        <div className="max-w-[1110px] h-[240px] mx-auto flex text-center justify-center items-center xs:h-[102px]">
+          <h1 className="text-white font-bold text-[40px] leading-[44px] tracking-[1.43px] xs:text-[28px] xs:tracking-[2px]">
             {params.category.toUpperCase()}
           </h1>
         </div>
@@ -51,7 +51,7 @@ const Category: React.FC<pageProps> = ({ params }) => {
             key={product.item.id}
             className={`max-w-[1110px] min-h-[560px] mx-auto pt-[10rem] flex flex-row ${
               product.reverse && "flex-row-reverse"
-            } gap-[125px] justify-center items-center`}
+            } gap-[125px] justify-center items-center xs:w-[91.75%] xs:pt-16 xs:flex-col xs:gap-8 xs:pb-[58px]`}
           >
             <Image
               src={product.item.image.desktop}
@@ -59,19 +59,19 @@ const Category: React.FC<pageProps> = ({ params }) => {
               width={540}
               height={560}
               // sizes="100vw"
-              className="w-[540px] h-[560px] rounded-lg"
+              className="w-[540px] h-[560px] rounded-lg xs:max-h-[352px] xs:w-full xs:object-cover"
             />
 
-            <div className="max-w-[445px] h-full gap-8 flex flex-col justify-center">
+            <div className="max-w-[445px] h-full gap-8 flex flex-col justify-center xs:items-center">
               {product.item.new && (
-                <h2 className="text-[#D87D4A] text-[14px] font-normal tracking-[10px]">
+                <h2 className="text-[#D87D4A] text-[14px] font-normal tracking-[10px] xs:text-center">
                   NEW PRODUCT
                 </h2>
               )}
-              <h1 className="text-black font-bold text-[40px] leading-[44px] tracking-[1.43px]">
+              <h1 className="text-black font-bold text-[40px] leading-[44px] tracking-[1.43px] xs:text-center xs:text-[28px] xs:leading-none xs:tracking-[1px]">
                 {product.item.name}
               </h1>
-              <p className="text-[15px] leading-[25px] opacity-50 font-medium">
+              <p className="text-[15px] leading-[25px] opacity-50 font-medium xs:text-center">
                 {product.item.description}
               </p>
               <Link href={`${product.item.category}/${product.item.slug}`}>
@@ -84,12 +84,12 @@ const Category: React.FC<pageProps> = ({ params }) => {
         ))}
       </>
       {/* FEATURED ITEMS */}
-      <div className="pt-[160px] pb-[160px]">
+      <div className="pt-[160px] pb-[160px] xs:pt-[180px] xs:pb-[120px]">
         <FeatureItems />
       </div>
 
       {/* BESTGEAR */}
-      <div className="pb-[160px]">
+      <div className="pb-[160px] xs:pb-[120px]">
         <BestGear />
       </div>
     </div>
