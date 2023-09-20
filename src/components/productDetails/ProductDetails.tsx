@@ -44,7 +44,7 @@ const ProductDetails: React.FC<ProductProps> = ({ data }) => {
           NEW PRODUCT
         </h2>
       )}
-      <h1 className="text-black font-bold text-[40px] leading-[44px] tracking-[1.43px]">
+      <h1 className="text-black font-bold text-[40px] leading-[44px] tracking-[1.43px] xs:text-[28px] xs:leading-normal xs:tracking-[1px]">
         {data.name}
       </h1>
       <p className="text-[15px] leading-[25px] opacity-50 font-medium">

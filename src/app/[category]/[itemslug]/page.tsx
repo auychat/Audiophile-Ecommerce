@@ -77,22 +77,22 @@ const ProductItemsDetail: React.FC<pageProps> = ({ params }) => {
   }
 
   return (
-    <div className="max-w-[1110px] mx-auto flex flex-col">
+    <div className="max-w-[1110px] mx-auto flex flex-col xs:w-[91.75%]">
       <div>
         <button type="button" onClick={handleGoback}>
-          <h5 className="font-medium leading-[25px] opacity-50 pt-[77px] hover:opacity-100 hover:font-bold hover:text-[#D87D4A] transition-opacity duration-300">
+          <h5 className="font-medium leading-[25px] opacity-50 pt-[77px] hover:opacity-100 hover:font-bold hover:text-[#D87D4A] transition-opacity duration-300 xs:pt-4">
             Go Back
           </h5>
         </button>
       </div>
 
-      <div key={data.id} className=" flex flex-col gap-[10rem] pt-[56px]">
+      <div key={data.id} className=" flex flex-col gap-[10rem] pt-[56px] xs:pt-8 xs:gap-[6rem] ">
         {/* Fisrt Product Section */}
-        <div className="flex flex-row gap-[125px]">
+        <div className="flex flex-row gap-[125px] xs:flex-col xs:gap-8">
           {/* Product Image*/}
           <ProductImage data={data} />
           {/*Title, Description, Price*/}
-          <div className="w-[445.5px] h-[407px] flex flex-col gap-8 justify-center">
+          <div className="w-[445.5px] h-[407px] flex flex-col gap-8 justify-center xs:w-full">
             <ProductDetails data={data} />
             {/*Quantity, Add to cart button*/}
             <QuantityInput
@@ -118,7 +118,7 @@ const ProductItemsDetail: React.FC<pageProps> = ({ params }) => {
         <FeatureItems />
 
         {/* Sixth Best Gear Section */}
-        <div className="pb-[160px]">
+        <div className="pb-[160px] xs:pb-[120px] xs:pt-[24px]">
           <BestGear />
         </div>
       </div>

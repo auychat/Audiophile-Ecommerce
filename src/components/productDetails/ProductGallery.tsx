@@ -39,7 +39,7 @@ interface ProductProps {
 
 const ProductGallery: React.FC<ProductProps> = ({ data }) => {
   return (
-    <div className="flex flex-row gap-[30px]">
+    <div className="flex flex-row gap-[30px] xs:flex-col">
       <div className="flex flex-col gap-8">
         <div>
           <Image

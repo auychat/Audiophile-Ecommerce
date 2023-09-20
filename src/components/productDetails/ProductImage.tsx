@@ -39,7 +39,7 @@ interface ProductProps {
 
 const ProductImage: React.FC<ProductProps> = ({ data }) => {
   return (
-    <div className="relative w-[540px] h-[560px]">
+    <div className="relative w-[540px] h-[560px] rounded-lg xs:h-[327px] xs:w-full xs:bg-[#F1F1F1]">
       <Image
         src={data.image.desktop}
         alt={data.name}

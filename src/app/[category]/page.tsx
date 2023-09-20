@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+
 interface pageProps {
   params: { category: string };
 }
@@ -32,6 +33,7 @@ const Category: React.FC<pageProps> = ({ params }) => {
 
   // Reversing the headphone category array to display the items in reverse order
   const presentCatReverse = addReverse.reverse();
+ 
 
   return (
     <div>
@@ -86,12 +88,12 @@ const Category: React.FC<pageProps> = ({ params }) => {
         ))}
       </>
       {/* FEATURED ITEMS */}
-      <div className="pt-[160px] pb-[160px] xs:pt-[180px] xs:pb-[120px] sm:pt-[120px] sm:pb-[120px]">
+      <div className="pt-[160px] pb-[160px] xs:pt-[180px] xs:pb-[120px] sm:pt-[120px] sm:pb-[120px] xs:mx-auto xs:w-[91.75%]">
         <FeatureItems />
       </div>
 
       {/* BESTGEAR */}
-      <div className="pb-[160px] xs:pb-[120px] sm:pb-[120px]">
+      <div className="pb-[160px] xs:pb-[120px] sm:pb-[120px] xs:mx-auto xs:w-[91.75%]">
         <BestGear />
       </div>
     </div>

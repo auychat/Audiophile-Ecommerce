@@ -14,18 +14,18 @@ const ItemsData = [
 
 const FeatureItems = () => {
   return (
-    <div className="relative max-w-[1110px] mx-auto h-[284px] flex flex-row justify-between items-end gap-16 sm:h-[217px] sm:w-[91.75%] sm:gap-3 xs:w-[91.5%] xs:h-full xs:flex-col xs:items-center xs:gap-[68px] md:w-[91.75%] lg:w-[91.75%]">
+    <div className="relative max-w-[1110px] mx-auto h-[284px] flex flex-row justify-between items-end gap-16 sm:h-[217px] sm:w-[91.75%] sm:gap-3 xs:w-full xs:h-full xs:flex-col xs:items-center xs:gap-[68px] md:w-[91.75%] lg:w-[91.75%]">
       {ItemsData.map((item) => (
         <div
           key={item.id}
-          className="bg-[#F1F1F1] flex flex-col items-center gap-4 w-[350px] h-[204px] rounded-md sm:w-[223px] sm:h-[165px] xs:relative xs:w-[100%] xs:h-[165px]"
+          className="bg-[#F1F1F1] flex flex-col items-center gap-4 w-[350px] h-[204px] rounded-md sm:w-[223px] sm:h-[165px] xs:relative  xs:w-full xs:h-[165px]"
         >
-          <div className="absolute top-[0px] w-[220px] h-auto sm:w-[165px] xs:w-[180px] xs:top-[-65px]">
+          <div className="absolute top-[0px] w-[220px] h-auto sm:w-[165px] xs:top-[-50px] xs:max-h-[155px] xs:max-w-[155px] ">
             <Image
               src={item.image}
               alt={item.title}
               // sizes="100vw"
-              className="w-auto h-auto"
+              className="w-auto h-auto "
             />
           </div>
           {/* Category Navigation */}

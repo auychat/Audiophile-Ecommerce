@@ -5,7 +5,7 @@ import BestGearTabletImg from "../../../public/assets/shared/tablet/image-best-g
 
 const BestGear = () => {
   return (
-    <div className="max-w-[1110px] h-[588px] mx-auto flex flex-row justify-between gap-8 rounded-lg xs:flex-col-reverse xs:h-[698px] xs:w-[91.5%] sm:flex-col-reverse sm:h-full sm:items-center sm:w-[91.75%] md:flex-col-reverse md:h-full md:items-center md:w-[91.75%] lg:w-[91.75%]">
+    <div className="max-w-[1110px] h-[588px] mx-auto flex flex-row justify-between gap-8 rounded-lg xs:flex-col-reverse xs:h-[698px] xs:w-[100%] sm:flex-col-reverse sm:h-full sm:items-center sm:w-[91.75%] md:flex-col-reverse md:h-full md:items-center md:w-[91.75%] lg:w-[91.75%]">
       <div className="max-w-[445px] gap-8 flex flex-col justify-center sm:max-w-[573px] md:max-w-[75%]">
         <h1 className="font-bold text-[40px] leading-[44px] tracking-[1.43px] xs:text-[28px] xs:tracking-[1px] xs:text-center sm:text-center md:text-center">
           BRINGING YOU THE <strong className="text-[#D87D4A]">BEST</strong> AUDIO GEAR
