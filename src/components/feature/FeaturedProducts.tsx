@@ -7,10 +7,11 @@ import ZX7TabletImg from "../../../public/assets/home/tablet/image-speaker-zx7.j
 import ZX7MobileImg from "../../../public/assets/home/mobile/image-speaker-zx7.jpg";
 import YX1Img from "../../../public/assets/home/desktop/image-earphones-yx1.jpg";
 import YX1TabletImg from "../../../public/assets/home/tablet/image-earphones-yx1.jpg";
+import YX1MobileImg from "../../../public/assets/home/mobile/image-earphones-yx1.jpg";
 
 const FeaturedProducts = () => {
   return (
-    <div className="relative max-w-[1110px] mx-auto flex flex-col gap-12 xs:w-[91.5%] xs:gap-6 sm:w-[91.75%] md:w-[91.75%] lg:w-[91.75%]">
+    <div className="relative max-w-[1110px] mx-auto flex flex-col gap-12 xs:gap-6 xs:w-[91.5%] sm:w-[91.75%] md:w-[91.75%] lg:w-[91.75%]">
       {/* ZX9 SPEAKER */}
       <div className="relative flex flex-row h-[560px] justify-evenly items-center bg-[#D87D4A] rounded-lg overflow-hidden xs:flex-col xs:justify-start xs:h-full xs:min-h-[600px] sm:flex-col sm:h-full sm:min-h-[720px] md:flex-col md:h-full md:min-h-[720px]">
         {/* ZX9 SPEAKER Circle Background */}
@@ -47,10 +48,10 @@ const FeaturedProducts = () => {
       <div className="relative flex flex-row">
         <div className="width-full object-cover">
           {/* Desktop Devices */}
-          <Image src={ZX7Img} alt="ZX7 SPEAKER" className="rounded-lg xl:block lg:block md:hidden sm:hidden xs:hidden" />
+          <Image src={ZX7Img} alt="ZX7 SPEAKER" className="rounded-lg xl:block lg:block md:block sm:hidden xs:hidden" />
 
           {/* Tablet Devices */}
-          <Image src={ZX7TabletImg} alt="ZX7 SPEAKER" className="rounded-lg sm:block xs:hidden md:hidden lg:hidden xl:hidden" />
+          <Image src={ZX7TabletImg} alt="ZX7 SPEAKER" className="rounded-lg xs:hidden sm:block md:hidden lg:hidden xl:hidden" />
 
           {/* Mobile Devices */}
           <Image src={ZX7MobileImg} alt="ZX7 SPEAKER" className="rounded-lg xs:block sm:hidden md:hidden lg:hidden xl:hidden" />
@@ -68,11 +69,17 @@ const FeaturedProducts = () => {
       </div>
 
       {/* YX1 EARPHONES */}
-      <div className="flex flex-row gap-[30px] xs:flex-col sm:gap-3">
-        <Image src={YX1Img} alt="YX1 EARPHONES" className="rounded-lg xs:min-h-[200px] xs:hidden sm:hidden md:block lg:block xl:block" />
-        <Image src={YX1TabletImg} alt="YX1 EARPHONES" className="rounded-lg sm:block md:hidden lg:hidden xl:hidden xs:min-h-[200px] sm:max-w-[339px] sm:min-h-[320px]" />
+      <div className="flex flex-row gap-[30px] xs:flex-col sm:gap-3 md:gap-4">
+        {/* Desktop Image */}
+        <Image src={YX1Img} alt="YX1 EARPHONES" className="rounded-lg xs:hidden sm:hidden md:block lg:block xl:block md:min-w-[350px] md:w-full" />
+        
+        {/* Tablet Image */}
+        <Image src={YX1TabletImg} alt="YX1 EARPHONES" className="rounded-lg xs:hidden sm:block md:hidden lg:hidden xl:hidden sm:max-w-[339px] sm:min-h-[320px]" />
 
-        <div className="flex flex-col justify-center gap-8 bg-[#F1F1F1] w-full rounded-lg pl-[95px] xs:pl-6 xs:min-h-[200px]">
+        {/* Mobile Image */}
+        <Image src={YX1MobileImg} alt="YX1 EARPHONES" className="rounded-lg sm:hidden md:hidden lg:hidden xl:hidden xs:block xs:min-h-[200px]" />
+
+        <div className="flex flex-col justify-center gap-8 bg-[#F1F1F1] w-full rounded-lg pl-[7%] items-start xs:pl-6 xs:min-h-[200px] xs:h-full sm:min-h-[320px] sm:min-w-[339px]  ">
           <h2 className="text-[28px] leading-normal tracking-[2px] font-bold text-black">
             YX1 EARPHONES
           </h2>

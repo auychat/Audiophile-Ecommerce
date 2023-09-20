@@ -41,7 +41,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-[#191919] relative z-20">
-      <nav className="xl:max-w-[1110px] min-h-[96px] mx-auto flex flex-row justify-between justify-items-center item-center w-full py-4 lg:max-w-[80%] md:max-w-[84%] sm:max-w-[88%] xs:max-w-[92%]">
+      <nav className="xl:max-w-[1110px] min-h-[96px] mx-auto flex flex-row justify-between justify-items-center item-center w-full py-4 lg:w-[91.75%] md:max-w-[91.75%] sm:max-w-[91.75%] xs:max-w-[92%]">
         {/*Hamburger */}
 
         <div
@@ -96,7 +96,7 @@ const Navbar = () => {
           className="flex items-center cursor-pointer"
           onClick={openCartModal}
         >
-          <div className="relative py-2">
+          <div className="relative py-2 pr-2">
             {/* Render the total number of different items in the cart */}
             {totalDiffItems > 0 && (
               <div className="t-0 absolute left-3">
@@ -125,7 +125,7 @@ const Navbar = () => {
         {/* Render the modal if the isModalOpen is true */}
         {isModalOpen && <CartModal closeModal={closeCartModal} />}
       </nav>
-      <hr className="xl:max-w-[1110px] mx-auto opacity-20 lg:max-w-[80%] md:max-w-[84%] sm:max-w-[88%] xs:max-w-[92%]" />
+      <hr className="xl:max-w-[1110px] mx-auto opacity-20 lg:w-[91.75%] md:w-[91.75%] sm:w-[91.75%] xs:w-[92%]" />
     </header>
   );
 };

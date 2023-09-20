@@ -4,12 +4,12 @@ import Link from "next/link";
 const Hero = (): JSX.Element => {
   return (
     <div className="bg-[#191919]">
-      <div className="relative xl:max-w-[1110px] min-h-[632px] mx-auto text-white text-center flex flex-col justify-center items-center h-full lg:max-w-[80%] md:max-w-[84%] sm:max-w-[88%] xs:max-w-[92%]">
+      <div className="relative max-w-[1110px] min-h-[632px] mx-auto text-white text-center flex flex-col justify-center items-center h-full overflow-hidden xs:w-[91.5%] xs:min-h-[503px] sm:w-[91.75%] md:w-[91.75%] md:items-start md:min-h-[552px] lg:w-[91.75%] lg:items-start lg:min-h-[582px] xl:items-start">
         {/* Hero Image */}
-          <div className="bg-hero-img-desktop absolute bg-no-repeat bg-cover xl:bg-right xl:w-full xl:h-full xl:top-[-80px] xl:right-[-132px] xs:bg-hero-img-mobile xs:bg-center xs:right-[0px] xs:w-full xs:h-full sm:bg-hero-img-tablet sm:bg-center sm:w-full sm:h-full"></div>
+          <div className="bg-hero-img-desktop absolute bg-no-repeat bg-cover bg-center w-full h-full xl:bg-right xl:w-full xl:h-[115%] xl:top-[-95px] xl:right-[-132px] lg:top-[-95px] lg:h-[115%] md:h-[110%] md:top-[-75px] sm:bg-hero-img-tablet sm:bg-center sm:w-full sm:h-[110%] sm:top-[-75px] xs:bg-hero-img-mobile xs:bg-center xs:top-[-90px] xs:right-[0px] xs:w-full xs:h-[115%]"></div>
 
         {/* Hero Content */}
-        <div className="flex flex-col justify-center gap-8 xl:max-w-[398px] z-10 text-left lg:max-w-[80%] md:max-w-[84%] sm:max-w-[88%]  xs:items-center xs:max-w-[328px] sm:items-center">
+        <div className="flex flex-col gap-8 max-w-[398px] z-10 text-left md:w-[91.75%] sm:w-[91.75%] xs:items-center xs:max-w-[328px] xs:gap-6 sm:items-center sm:gap-7">
           <h2 className="text-sm leading-normal tracking-[10px] opacity-50">
             NEW PRODUCT
           </h2>
