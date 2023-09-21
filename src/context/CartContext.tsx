@@ -106,28 +106,28 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(cartReducer, {
     // For test only
     cart: [
-      {
-        id: 1,
-        imgUrl:
-          "/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg",
-        name: "XX99 Mark II",
-        price: 2999,
-        quantity: 1,
-      },
-      {
-        id: 2,
-        imgUrl: "/assets/product-xx59-headphones/desktop/image-product.jpg",
-        name: "XX59",
-        price: 899,
-        quantity: 2,
-      },
-      {
-        id: 3,
-        imgUrl: "/assets/product-yx1-earphones/desktop/image-product.jpg",
-        name: "YX1",
-        price: 599,
-        quantity: 1,
-      },
+    //   {
+    //     id: 1,
+    //     imgUrl:
+    //       "/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg",
+    //     name: "XX99 Mark II",
+    //     price: 2999,
+    //     quantity: 1,
+    //   },
+    //   {
+    //     id: 2,
+    //     imgUrl: "/assets/product-xx59-headphones/desktop/image-product.jpg",
+    //     name: "XX59",
+    //     price: 899,
+    //     quantity: 2,
+    //   },
+    //   {
+    //     id: 3,
+    //     imgUrl: "/assets/product-yx1-earphones/desktop/image-product.jpg",
+    //     name: "YX1",
+    //     price: 599,
+    //     quantity: 1,
+    //   },
     ],
   });
 

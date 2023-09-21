@@ -9,12 +9,17 @@ interface ThankyouModalProps {
 }
 
 const ThankyouModal: React.FC<ThankyouModalProps> = ({ grandTotal }) => {
-  const { state } = useCart();
+  const { state, dispatch } = useCart();
   const [showAllItems, setShowAllItems] = React.useState(false);
 
   // Calculate the total number of different items in the cart
   const totalDiffItems = state.cart.length;
   const moreOtherItems = totalDiffItems - 1;
+
+  // Clear the cart when clicking the "BACK TO HOME" button
+  const handleClearCart = () => {
+    dispatch({ type: "CLEAR_CART" });
+  };
 
   return (
     <div className="fixed inset-0 z-50 w-full max-h-full flex items-center justify-center bg-black bg-opacity-50 transition-opacity overflow-x-hidden overflow-y-auto">
@@ -157,6 +162,7 @@ const ThankyouModal: React.FC<ThankyouModalProps> = ({ grandTotal }) => {
             <Link href="/">
               <button
                 type="button"
+                onClick={handleClearCart}
                 className="bg-[#D87D4A] text-white font-bold text-[13px] tracking-[1px] inline-block w-full py-3.5 rounded-sm hover:bg-[#FBAF85] transition duration-300 ease-in-out"
               >
                 BACK TO HOME

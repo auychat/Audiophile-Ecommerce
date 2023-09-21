@@ -62,7 +62,7 @@ const Category: React.FC<pageProps> = ({ params }) => {
                 width={540}
                 height={560}
                 // sizes="100vw"
-                className="w-[540px] h-[560px] rounded-xl xs:max-h-[352px] xs:w-full xs:object-cover sm:max-h-[352px] sm:w-full sm:object-contain md:max-h-[352px] md:min-w-[340px] md:object-contain md:rounded-lg lg:object-cover"
+                className="w-auto h-auto rounded-xl xs:max-h-[352px] xs:w-full xs:object-cover sm:max-h-[352px] sm:w-full sm:object-contain md:max-h-[352px] md:min-w-[340px] md:object-contain md:rounded-lg lg:object-cover"
               />
             </div>
 

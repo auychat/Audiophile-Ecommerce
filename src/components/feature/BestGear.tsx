@@ -21,8 +21,8 @@ const BestGear = () => {
       </div>
 
       <div className="relative overflow-hidden xs:min-h-[300px] sm:h-[300px] sm:w-full md:h-[375px] md:w-full h-full w-full">
-        <Image src={BestGearImg} alt="Best Audio Gear" fill={true} className="object-cover xs:block xs:object-cover rounded-lg sm:hidden md:hidden lg:block xl:block" />
-        <Image src={BestGearTabletImg} alt="Best Audio Gear" fill={true} className="rounded-lg sm:block sm:object-cover md:block xs:hidden  lg:hidden xl:hidden" />
+        <Image src={BestGearImg} alt="Best Audio Gear" className="object-cover xs:block xs:object-cover rounded-lg sm:hidden md:hidden lg:block xl:block" />
+        <Image src={BestGearTabletImg} alt="Best Audio Gear" className="rounded-lg sm:block sm:object-cover md:block xs:hidden  lg:hidden xl:hidden" />
       </div>
     </div>
   );
