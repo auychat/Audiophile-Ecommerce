@@ -1,7 +1,13 @@
 "use client";
 
 // Import dependencies
-import React, { createContext, useContext, useReducer, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useReducer,
+  ReactNode,
+  useEffect,
+} from "react";
 
 // Define the shape of the cart item
 interface ICartItem {
@@ -90,10 +96,12 @@ const cartReducer = (state: ICartState, action: CartAction) => {
       };
     case "CLEAR_CART":
       // Clear the entire cart by setting it to an empty array
-      return {
-        ...state,
-        cart: [],
-      };
+      const newState = { ...state, cart: [] };
+
+      // Save the new state to local storage
+      localStorage.setItem("cartState", JSON.stringify(newState));
+      return newState;
+
     default:
       // Return the current state if no matching action is found
       return state;
@@ -104,32 +112,23 @@ const cartReducer = (state: ICartState, action: CartAction) => {
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   // Initialize the cart state using the cartReducer and an initial empty cart array
   const [state, dispatch] = useReducer(cartReducer, {
-    // For test only
-    cart: [
-    //   {
-    //     id: 1,
-    //     imgUrl:
-    //       "/assets/product-xx99-mark-two-headphones/desktop/image-product.jpg",
-    //     name: "XX99 Mark II",
-    //     price: 2999,
-    //     quantity: 1,
-    //   },
-    //   {
-    //     id: 2,
-    //     imgUrl: "/assets/product-xx59-headphones/desktop/image-product.jpg",
-    //     name: "XX59",
-    //     price: 899,
-    //     quantity: 2,
-    //   },
-    //   {
-    //     id: 3,
-    //     imgUrl: "/assets/product-yx1-earphones/desktop/image-product.jpg",
-    //     name: "YX1",
-    //     price: 599,
-    //     quantity: 1,
-    //   },
-    ],
+    cart: loadCartStateFromLocalStorage(),
   });
+
+  // Function to load cart state from local storage
+  function loadCartStateFromLocalStorage(): ICartItem[] {
+    // Get the cart state from local storage
+    const storedState = localStorage.getItem("cartState");
+
+    // If it exists, parse and return it as the initial cart state
+    return storedState ? JSON.parse(storedState).cart : [];
+  }
+
+  // Use useEffect to save the cart state to local storage whenever it changes
+  useEffect(() => {
+    // Save the cart state to local storage
+    localStorage.setItem("cartState", JSON.stringify(state));
+  }, [state]);
 
   return (
     // Send the state and dispatch values to the context provider as the value prop to make them available to all child components
