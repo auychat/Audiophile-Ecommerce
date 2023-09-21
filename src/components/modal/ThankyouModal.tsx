@@ -17,8 +17,8 @@ const ThankyouModal: React.FC<ThankyouModalProps> = ({ grandTotal }) => {
 
   return (
     <div className="fixed inset-0 z-50 w-full max-h-full flex items-center justify-center bg-black bg-opacity-50 transition-opacity overflow-x-hidden overflow-y-auto">
-      <div className="relative w-[540px] max-h-full ">
-        <div className="relative bg-white p-12 rounded-lg shadow-lg flex flex-col gap-8">
+      <div className="relative w-[540px] max-h-full xs:max-w-[327px] ">
+        <div className="relative bg-white p-12 rounded-lg shadow-lg flex flex-col gap-8 xs:p-8">
           <Image
             src={confirmIcon}
             alt="Confirmation Icon"
@@ -36,9 +36,9 @@ const ThankyouModal: React.FC<ThankyouModalProps> = ({ grandTotal }) => {
           </p>
 
           {/* Summary Cart Items && Grand Total */}
-          <div className="flex flex-row w-[444px] min-h-[140px] h-full">
+          <div className="flex flex-row w-[444px] min-h-[140px] h-full xs:flex-col xs:max-w-[263px]">
             {/* Left Group */}
-            <div className="flex flex-col gap-3 w-[246px] p-6 bg-[#F1F1F1] rounded-l-lg">
+            <div className="flex flex-col gap-3 w-[246px] p-6 bg-[#F1F1F1] rounded-l-lg xs:rounded-b-none xs:rounded-t-lg xs:w-full">
               {/* Partition 1: Cart Item */}
               <div className="flex flex-row items-start justify-between ">
                 <div className="flex flex-row gap-4 w-auto h-auto">
@@ -90,7 +90,7 @@ const ThankyouModal: React.FC<ThankyouModalProps> = ({ grandTotal }) => {
             {/* End of Left Group */}
 
             {/* Grand Total (Right Group) */}
-            <div className="bg-black w-[198px] rounded-r-lg flex flex-col items-start justify-center pl-8">
+            <div className="bg-black w-[198px] rounded-r-lg flex flex-col items-start justify-center pl-8 xs:min-h-[92px] xs:w-full xs:rounded-t-none xs:rounded-b-lg">
               <p className="text-[15px] leading-[25px] text-white font-medium opacity-50">
                 GRAND TOTAL
               </p>

@@ -124,17 +124,17 @@ const Checkout = () => {
   return (
     <div className="bg-[#F0F0F0]">
       {/* GO BACK */}
-      <div className="max-w-[1110px] mx-auto pt-[79px]">
+      <div className="max-w-[1110px] mx-auto pt-[79px] xs:w-[91.75%] xs:pt-4 sm:w-[91.5%] sm:pt-12 md:w-[91.5%] md:pt-12 lg:w-[91.5%]">
         <button type="button" onClick={handleGoback}>
           <h5 className="font-medium leading-[25px] opacity-50 hover:opacity-100 hover:text-[#D87D4A] hover:font-bold transition-opacity duration-300">
             Go Back
           </h5>
         </button>
       </div>
-      <div className="max-w-[1110px] mx-auto flex flex-row justify-between">
+      <div className="max-w-[1110px] mx-auto flex flex-row justify-between xs:w-[91.75%] xs:flex-col xs:gap-8 sm:w-[91.5%] sm:flex-col sm:gap-8 md:w-[91.5%] md:flex-col md:gap-8 lg:w-[91.5%] lg:gap-8">
         {/* LEFT COMPONENT */}
-        <div className="max-w-[730px] bg-white px-12 py-12 rounded-xl mt-[38px] mb-[142px]">
-          <h1 className="text-[32px] font-bold leading-9 tracking-[1.14px] mb-[41px]">
+        <div className="max-w-[730px] bg-white px-12 py-12 rounded-xl mt-[38px] mb-[142px] xs:mt-6 xs:mb-0 xs:px-6 xs:py-8 sm:mt-8 sm:mb-0 sm:px-8 sm:py-8 md:mt-8 md:mb-0 md:px-8 md:py-8 md:max-w-full lg:min-w-[600px]">
+          <h1 className="text-[32px] font-bold leading-9 tracking-[1.14px] mb-[41px] xs:text-[28px] xs:tracking-[1px] xs:mb-8 sm:mb-8 md:mb-8">
             CHECKOUT
           </h1>
           {/* FORM START */}
@@ -156,7 +156,7 @@ const Checkout = () => {
         </div>
 
         {/* RIGHT COMPONENT */}
-        <div className="max-w-[350px] w-full h-full bg-white px-8 py-8 rounded-xl mt-[38px]">
+        <div className="max-w-[350px] w-full h-full bg-white px-8 py-8 rounded-xl mt-[38px] xs:mt-0 xs:mb-[97px] xs:max-w-full sm:mt-0 sm:mb-[116px] sm:max-w-full md:mt-0 md:mb-[116px] md:max-w-full">
           <Summary onSubmit={formik.handleSubmit} paymentButton="Continue" />
         </div>
       </div>

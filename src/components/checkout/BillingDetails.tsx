@@ -6,13 +6,13 @@ interface BillingDetailsProps {
 
 const BillingDetails: React.FC<BillingDetailsProps> = ({ formik }) => {
   return (
-    <div className="flex flex-col gap-4 mb-[53px]">
+    <div className="flex flex-col gap-4 mb-[53px] xs:mb-8">
       <h2 className="text-[#D87D4A] text-[13px] font-bold leading-[25px] tracking-[0.93px]">
         Billing Details
       </h2>
-      <div className="flex flex-row gap-4 items-center justify-between">
+      <div className="flex flex-row gap-4 items-center justify-between xs:flex-col xs:justify-center">
         {/* Name */}
-        <div className="flex flex-col gap-2 w-[309px] h-full relative">
+        <div className="flex flex-col gap-2 w-[309px] h-full relative xs:w-full">
           <label
             htmlFor="name"
             className="flex flex-row items center justify-between"
@@ -62,7 +62,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ formik }) => {
         {/* End of Name */}
 
         {/* Email */}
-        <div className="flex flex-col gap-2 w-[309px] h-full">
+        <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
           <label
             htmlFor="email"
             className="flex flex-row items center justify-between"
@@ -114,7 +114,7 @@ const BillingDetails: React.FC<BillingDetailsProps> = ({ formik }) => {
       </div>
 
       {/* Phone Number */}
-      <div className="flex flex-col gap-2 w-[309px] h-full">
+      <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
         <label
           htmlFor="phone"
           className="flex flex-row items center justify-between"

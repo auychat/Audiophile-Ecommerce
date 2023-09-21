@@ -42,8 +42,8 @@ const CartModal = ({ closeModal }: CartModalProps) => {
   return (
     // Render the modal if the isModalOpen is true
     <div className="fixed inset-0 z-50 w-full max-h-full flex bg-black bg-opacity-50 transition-opacity overflow-x-hidden overflow-y-auto">
-      <div className="w-full max-w-[1110px] mx-auto h-full flex justify-end pt-[129px]">
-        <div className="relative left-0 w-[377px] max-h-full">
+      <div className="w-full max-w-[1110px] mx-auto h-full flex justify-end pt-[129px] xs:justify-center">
+        <div className="relative left-0 max-w-[377px] max-h-[488px] sm:left-[-5%] md:left-[-5%] lg:left-[-5%]">
           <div className="relative bg-white p-8 rounded-lg shadow-lg">
             <button
               type="button"

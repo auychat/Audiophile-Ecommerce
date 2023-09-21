@@ -95,7 +95,7 @@ const OrderReview = () => {
   return (
     <div className="bg-[#F0F0F0]">
       {/* GO BACK */}
-      <div className="max-w-[1110px] mx-auto pt-[79px]">
+      <div className="max-w-[1110px] mx-auto pt-[79px] xs:w-[91.75%] xs:pt-4 sm:w-[91.5%] sm:pt-12 md:w-[91.5%] md:pt-12 lg:w-[91.5%]">
         <button type="button" onClick={handleGoback}>
           <h5 className="font-medium leading-[25px] opacity-50 hover:opacity-100 hover:text-[#D87D4A] hover:font-bold transition-opacity duration-300">
             Go Back
@@ -103,22 +103,22 @@ const OrderReview = () => {
         </button>
       </div>
 
-      <div className="max-w-[1110px] mx-auto flex flex-row justify-between">
+      <div className="max-w-[1110px] mx-auto flex flex-row justify-between xs:w-[91.75%] xs:flex-col xs:gap-8 sm:w-[91.5%] sm:flex-col sm:gap-8 md:w-[91.5%] md:flex-col md:gap-8 lg:w-[91.5%] lg:gap-8">
         {/* LEFT COMPONENT */}
-        <div className="max-w-[730px] bg-white px-12 py-12 rounded-xl mt-[38px] mb-[142px]">
-          <h1 className="text-[32px] font-bold leading-9 tracking-[1.14px] mb-[41px]">
+        <div className="max-w-[730px] bg-white px-12 py-12 rounded-xl mt-[38px] mb-[142px] xs:mt-6 xs:mb-0 xs:px-6 xs:py-8 sm:mt-8 sm:mb-0 sm:px-8 sm:py-8 md:mt-8 md:mb-0 md:px-8 md:py-8 md:max-w-full lg:min-w-[600px]">
+          <h1 className="text-[32px] font-bold leading-9 tracking-[1.14px] mb-[41px] xs:text-[28px] xs:tracking-[1px] xs:mb-8 sm:mb-8 md:mb-8">
             CHECKOUT
           </h1>
           {/* FORM START */}
           <form>
             {/* BILLING DETAILS */}
-            <div className="flex flex-col gap-4 mb-[53px]">
+            <div className="flex flex-col gap-4 mb-[53px] xs:mb-8">
               <h2 className="text-[#D87D4A] text-[13px] font-bold leading-[25px] tracking-[0.93px]">
                 Billing Details
               </h2>
-              <div className="flex flex-row gap-4 items-center justify-between">
+              <div className="flex flex-row gap-4 items-center justify-between xs:flex-col xs:justify-center">
                 {/* Name */}
-                <div className="flex flex-col gap-2 w-[309px] h-full relative">
+                <div className="flex flex-col gap-2 w-[309px] h-full relative xs:w-full">
                   <label
                     htmlFor="name"
                     className="flex flex-row items center justify-between"
@@ -140,7 +140,7 @@ const OrderReview = () => {
                 {/* End of Name */}
 
                 {/* Email */}
-                <div className="flex flex-col gap-2 w-[309px] h-full">
+                <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
                   <label
                     htmlFor="email"
                     className="flex flex-row items center justify-between"
@@ -163,7 +163,7 @@ const OrderReview = () => {
               </div>
 
               {/* Phone Number */}
-              <div className="flex flex-col gap-2 w-[309px] h-full">
+              <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
                 <label
                   htmlFor="phone"
                   className="flex flex-row items center justify-between"
@@ -186,12 +186,12 @@ const OrderReview = () => {
             </div>
 
             {/* SHIPPING INFO */}
-            <div className="flex flex-col gap-4  mb-[61px]">
+            <div className="flex flex-col gap-4 mb-[61px]">
               <h2 className="text-[#D87D4A] text-[13px] font-bold leading-[25px] tracking-[0.93px]">
                 SHIPPING INFO
               </h2>
               {/* Address */}
-              <div className="flex flex-col gap-2 w-full h-full">
+              <div className="flex flex-col gap-2 w-full h-full xs:w-full">
                 <label
                   htmlFor="address"
                   className="flex flex-row items center justify-between"
@@ -211,9 +211,9 @@ const OrderReview = () => {
                 />
               </div>
               {/* ZipCode & City*/}
-              <div className="flex flex-row gap-4 items-center justify-between">
+              <div className="flex flex-row gap-4 items-center justify-between xs:flex-col xs:justify-center">
                 {/* ZipCode */}
-                <div className="flex flex-col gap-2 w-[309px] h-full">
+                <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
                   <label
                     htmlFor="postal-code"
                     className="flex flex-row items center justify-between"
@@ -235,7 +235,7 @@ const OrderReview = () => {
                 {/* End of ZipCode */}
 
                 {/* City */}
-                <div className="flex flex-col gap-2 w-[309px] h-full">
+                <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
                   <label
                     htmlFor="address-level2"
                     className="flex flex-row items center justify-between"
@@ -259,7 +259,7 @@ const OrderReview = () => {
               {/* End of ZipCode and City */}
 
               {/* Country */}
-              <div className="flex flex-col gap-2 w-[309px] h-full">
+              <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
                 <label
                   htmlFor="country"
                   className="flex flex-row items center justify-between"
@@ -288,9 +288,9 @@ const OrderReview = () => {
                 PAMENT DETAILS
               </h2>
               {/* Payment Method*/}
-              <div className="flex flex-row gap-4 justify-between">
+              <div className="flex flex-row gap-4 justify-between xs:flex-col">
                 {/* Payment Method */}
-                <div className="flex flex-col gap-2 w-[309px] h-full">
+                <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
                   <p className="text-[12px] tracking-[-0.21px] font-bold">
                     Payment Method
                   </p>
@@ -299,7 +299,7 @@ const OrderReview = () => {
                 {/* e-Money && Cash on Delivery */}
                 <div className="flex flex-col gap-4">
                   {/* e-Money */}
-                  <div className="flex flex-row gap-4 items-center w-[309px] h-full border border-[#CFCFCF] px-6 py-[17px] rounded-lg">
+                  <div className="flex flex-row gap-4 items-center w-[309px] h-full xs:w-full border border-[#CFCFCF] px-6 py-[17px] rounded-lg">
                     <input
                       id="e-Money"
                       name="paymentMethod"
@@ -314,7 +314,7 @@ const OrderReview = () => {
                     </label>
                   </div>
                   {/* Cash on Delivery */}
-                  <div className="flex flex-row gap-4 items-center w-[309px] h-full border border-[#CFCFCF] px-6 py-[17px] rounded-lg">
+                  <div className="flex flex-row gap-4 items-center w-[309px] h-full xs:w-full border border-[#CFCFCF] px-6 py-[17px] rounded-lg">
                     <input
                       id="cash-on-delivery"
                       name="paymentMethod"
@@ -333,13 +333,13 @@ const OrderReview = () => {
               {/* e-Money Number && e-Money PIN */}
               {/* Conditional rendering when choosing e-Money*/}
               <div
-                className={`flex flex-row gap-4 items-center justify-between mt-[10px] ${
+                className={`flex flex-row gap-4 items-center justify-between mt-[10px] xs:flex-col xs:w-full ${
                   // Add styles when the payment method is e-Money
                   paymentMethod !== "e-Money" ? "hidden" : ""
                 }`}
               >
                 {/* e-Money Number */}
-                <div className="flex flex-col gap-2 w-[309px] h-full">
+                <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
                   <label
                     htmlFor="eMoneyNumber"
                     className="flex flex-row items center justify-between"
@@ -359,7 +359,7 @@ const OrderReview = () => {
                 </div>
 
                 {/* e-Money PIN */}
-                <div className="flex flex-col gap-2 w-[309px] h-full">
+                <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
                   <label
                     htmlFor="eMoneyPIN"
                     className="flex flex-row items center justify-between"
@@ -381,7 +381,7 @@ const OrderReview = () => {
 
               {/* Conditional rendering when choosing Cash on Delivery */}
               {paymentMethod === "cash-on-delivery" && (
-                <div className="flex flex-row gap-4 items-center justify-between mt-4">
+                <div className="flex flex-row gap-4 items-center justify-between mt-4 xs:w-full">
                   <Image
                     src={cashOnDeliveryIcon}
                     alt="CashOnDelivery"
@@ -402,7 +402,7 @@ const OrderReview = () => {
         </div>
 
         {/* RIGHT COMPONENT */}
-        <div className="max-w-[350px] w-full h-full bg-white px-8 py-8 rounded-xl mt-[38px]">
+        <div className="max-w-[350px] w-full h-full bg-white px-8 py-8 rounded-xl mt-[38px] xs:mt-0 xs:mb-[97px] xs:max-w-full sm:mt-0 sm:mb-[116px] sm:max-w-full md:mt-0 md:mb-[116px] md:max-w-full">
           <Summary onSubmit={handleSubmit} paymentButton="Pay" />
         </div>
       </div>

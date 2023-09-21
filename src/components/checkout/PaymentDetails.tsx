@@ -18,9 +18,9 @@ const PaymentDetails: React.FC<PaymentDetailsProps> = ({
         PAMENT DETAILS
       </h2>
       {/* Payment Method*/}
-      <div className="flex flex-row gap-4 justify-between">
+      <div className="flex flex-row gap-4 justify-between xs:flex-col">
         {/* Payment Method */}
-        <div className="flex flex-col gap-2 w-[309px] h-full">
+        <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
           <p className="text-[12px] tracking-[-0.21px] font-bold">
             Payment Method
           </p>
@@ -29,7 +29,7 @@ const PaymentDetails: React.FC<PaymentDetailsProps> = ({
         {/* e-Money && Cash on Delivery */}
         <div className="flex flex-col gap-4">
           {/* e-Money */}
-          <div className="flex flex-row gap-4 items-center w-[309px] h-full border border-[#CFCFCF] px-6 py-[17px] rounded-lg">
+          <div className="flex flex-row gap-4 items-center w-[309px] h-full xs:w-full border border-[#CFCFCF] px-6 py-[17px] rounded-lg">
             <input
               id="e-Money"
               name="paymentMethod"
@@ -47,7 +47,7 @@ const PaymentDetails: React.FC<PaymentDetailsProps> = ({
             </label>
           </div>
           {/* Cash on Delivery */}
-          <div className="flex flex-row gap-4 items-center w-[309px] h-full border border-[#CFCFCF] px-6 py-[17px] rounded-lg">
+          <div className="flex flex-row gap-4 items-center w-[309px] h-full xs:w-full border border-[#CFCFCF] px-6 py-[17px] rounded-lg">
             <input
               id="cash-on-delivery"
               name="paymentMethod"
@@ -69,13 +69,13 @@ const PaymentDetails: React.FC<PaymentDetailsProps> = ({
       {/* e-Money Number && e-Money PIN */}
       {/* Conditional rendering when choosing e-Money*/}
       <div
-        className={`flex flex-row gap-4 items-center justify-between mt-[10px] ${
+        className={`flex flex-row gap-4 items-center justify-between mt-[10px] xs:flex-col ${
           // Add styles when the payment method is e-Money
           formik.values.paymentMethod !== "e-Money" ? "hidden" : ""
         }`}
       >
         {/* e-Money Number */}
-        <div className="flex flex-col gap-2 w-[309px] h-full">
+        <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
           <label
             htmlFor="eMoneyNumber"
             className="flex flex-row items center justify-between"
@@ -126,7 +126,7 @@ const PaymentDetails: React.FC<PaymentDetailsProps> = ({
         </div>
 
         {/* e-Money PIN */}
-        <div className="flex flex-col gap-2 w-[309px] h-full">
+        <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
           <label
             htmlFor="eMoneyPIN"
             className="flex flex-row items center justify-between"

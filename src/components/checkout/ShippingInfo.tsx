@@ -6,7 +6,7 @@ interface ShippingInfoProps {
 
 const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
   return (
-    <div className="flex flex-col gap-4  mb-[61px]">
+    <div className="flex flex-col gap-4 mb-[61px] xs:mb-8">
               <h2 className="text-[#D87D4A] text-[13px] font-bold leading-[25px] tracking-[0.93px]">
                 SHIPPING INFO
               </h2>
@@ -62,9 +62,9 @@ const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
                 />
               </div>
               {/* ZipCode & City*/}
-              <div className="flex flex-row gap-4 items-center justify-between">
+              <div className="flex flex-row gap-4 items-center justify-between xs:flex-col">
                 {/* ZipCode */}
-                <div className="flex flex-col gap-2 w-[309px] h-full">
+                <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
                   <label
                     htmlFor="postal-code"
                     className="flex flex-row items center justify-between"
@@ -117,7 +117,7 @@ const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
                 {/* End of ZipCode */}
 
                 {/* City */}
-                <div className="flex flex-col gap-2 w-[309px] h-full">
+                <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
                   <label
                     htmlFor="address-level2"
                     className="flex flex-row items center justify-between"
@@ -172,7 +172,7 @@ const ShippingInfo: React.FC<ShippingInfoProps> = ({formik}) => {
               {/* End of ZipCode and City */}
 
               {/* Country */}
-              <div className="flex flex-col gap-2 w-[309px] h-full">
+              <div className="flex flex-col gap-2 w-[309px] h-full xs:w-full">
                 <label
                   htmlFor="country"
                   className="flex flex-row items center justify-between"
