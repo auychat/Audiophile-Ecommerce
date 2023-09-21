@@ -83,9 +83,9 @@ const Checkout = () => {
   };
 
   // Get the stored formik values from session storage
-  const storedFormikValues = JSON.parse(
+  const storedFormikValues = typeof window !== "undefined" ? JSON.parse(
     sessionStorage.getItem("checkoutFormData") || "null"
-  );
+  ): null;
 
   // State to store the final formik values before redirecting to the review page
   const [finalFormikValues, setFinalFormikValues] =
