@@ -117,11 +117,17 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   // Function to load cart state from local storage
   function loadCartStateFromLocalStorage(): ICartItem[] {
-    // Get the cart state from local storage
-    const storedState = localStorage.getItem("cartState");
+    // If local storage is not available, return an empty array
+    if (typeof window !== "undefined" && window.localStorage) {
+      // Retrieve the cart state from local storage
+      const storedState = localStorage.getItem("cartState");
 
-    // If it exists, parse and return it as the initial cart state
-    return storedState ? JSON.parse(storedState).cart : [];
+      if (storedState) {
+        // If local storage is available, parse the stored JSON into the state shape expected
+        return JSON.parse(storedState).cart;
+      }
+    }
+    return [];
   }
 
   // Use useEffect to save the cart state to local storage whenever it changes
