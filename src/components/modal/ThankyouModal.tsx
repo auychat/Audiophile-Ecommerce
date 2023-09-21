@@ -27,7 +27,7 @@ const ThankyouModal: React.FC<ThankyouModalProps> = ({ grandTotal }) => {
             height={64}
           />
 
-          <h1 className="text-[32px] font-bold leading-[36px] traking-[1.14]">
+          <h1 className="text-[32px] font-bold leading-[36px] traking-[1.14] xs:text-[24px] xs:leading-[28px] xs:tracking-[0.86px]">
             THANK YOU <br />
             FOR YOUR ORDER
           </h1>
