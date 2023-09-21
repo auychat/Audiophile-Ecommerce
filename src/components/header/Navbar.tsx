@@ -6,6 +6,7 @@ import React from "react";
 import Logo from "../../../public/assets/shared/desktop/logo.svg";
 import { useCart } from "@/context/CartContext";
 import CartModal from "../modal/CartModal";
+import FeatureItems from "../feature/FeatureItems";
 
 const Links = [
   { id: 1, title: "HOME", link: "/" },
@@ -59,8 +60,8 @@ const Navbar = () => {
             </g>
           </svg>
 
-          {/* Mobile Navigation Links will be rendered if isNavOpen is true */}
-          {isNavOpen && (
+          {/* Mobile Navigation Links will be rendered if isNavOpen is true V1 */}
+          {/* {isNavOpen && (
             <div className="absolute flex flex-col items-center justify-start gap-8 top-[90px] left-0 pt-16 h-[40vh] w-[50%] max-w-[250px] bg-[#191919] bg-opacity-95 rounded-r-lg ">
               {Links.map((link) => (
                 <Link href={link.link} key={link.id}>
@@ -69,6 +70,15 @@ const Navbar = () => {
                   </p>
                 </Link>
               ))}
+            </div>
+          )} */}
+
+          {/* Mobile Navigation Links will be rendered if isNavOpen is true V2 */}
+          {isNavOpen && (
+            <div className="absolute flex flex-col items-center justify-start gap-8 top-[90px] left-0 pt-16 h-[100vh] w-[100%] max-w-full bg-[#ffffff] rounded-b-lg bg-opacity-100 sm:h-[340px] ">
+              <div className="xs:w-[91.75%]">
+                <FeatureItems />
+              </div>
             </div>
           )}
         </div>
