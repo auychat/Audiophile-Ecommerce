@@ -14,7 +14,7 @@ const ItemsData = [
 
 const FeatureItems = () => {
   return (
-    <div className="relative max-w-[1110px] mx-auto h-[284px] flex flex-row justify-between items-end gap-16 sm:h-[217px] sm:w-[91.75%] sm:gap-3 xs:w-full xs:h-full xs:flex-col xs:items-center xs:gap-[68px] md:w-[91.75%] lg:w-[91.75%]">
+    <div className="relative max-w-[1110px] mx-auto h-[284px] flex flex-row justify-between items-end gap-16 sm:h-[217px] sm:w-[100%] sm:gap-3 xs:w-full xs:h-full xs:flex-col xs:items-center xs:gap-[68px] md:w-[100%] lg:w-[100%]">
       {ItemsData.map((item) => (
         <div
           key={item.id}

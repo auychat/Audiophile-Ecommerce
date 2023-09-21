@@ -77,22 +77,25 @@ const ProductItemsDetail: React.FC<pageProps> = ({ params }) => {
   }
 
   return (
-    <div className="max-w-[1110px] mx-auto flex flex-col xs:w-[91.75%]">
+    <div className="max-w-[1110px] mx-auto flex flex-col xs:w-[91.75%] sm:w-[91.5%] md:w-[91.5%] lg:w-[91.5%]">
       <div>
         <button type="button" onClick={handleGoback}>
-          <h5 className="font-medium leading-[25px] opacity-50 pt-[77px] hover:opacity-100 hover:font-bold hover:text-[#D87D4A] transition-opacity duration-300 xs:pt-4">
+          <h5 className="font-medium leading-[25px] opacity-50 pt-[77px] hover:opacity-100 hover:font-bold hover:text-[#D87D4A] transition-opacity duration-300 xs:pt-4 sm:pt-8 md:pt-8 lg:pt-12">
             Go Back
           </h5>
         </button>
       </div>
 
-      <div key={data.id} className=" flex flex-col gap-[10rem] pt-[56px] xs:pt-8 xs:gap-[6rem] ">
+      <div
+        key={data.id}
+        className=" flex flex-col gap-[10rem] pt-[56px] xs:pt-8 xs:gap-[6rem] sm:gap-[7.5rem] md:gap-[7.5rem] lg:gap-[7.5rem]"
+      >
         {/* Fisrt Product Section */}
-        <div className="flex flex-row gap-[125px] xs:flex-col xs:gap-8">
+        <div className="flex flex-row gap-[125px] xs:flex-col xs:gap-8 sm:gap-[68px] md:gap-[68px] lg:gap-68px">
           {/* Product Image*/}
           <ProductImage data={data} />
           {/*Title, Description, Price*/}
-          <div className="w-[445.5px] h-[407px] flex flex-col gap-8 justify-center xs:w-full">
+          <div className="w-[445.5px] h-[407px] pt-[165px] flex flex-col gap-8 justify-center xs:w-full sm:max-w-[339.5px] sm:pt-16 md:pt-16">
             <ProductDetails data={data} />
             {/*Quantity, Add to cart button*/}
             <QuantityInput
@@ -112,13 +115,14 @@ const ProductItemsDetail: React.FC<pageProps> = ({ params }) => {
         <ProductGallery data={data} />
 
         {/* Fourth You may also like Section */}
-        <ProductSuggest data={data} />
+          <ProductSuggest data={data} />
+
 
         {/* Fifth Feature Items Section */}
         <FeatureItems />
 
         {/* Sixth Best Gear Section */}
-        <div className="pb-[160px] xs:pb-[120px] xs:pt-[24px]">
+        <div className="pb-[160px] xs:pb-[120px] xs:pt-[24px] sm:pb-[120px] md:pb-[120px]">
           <BestGear />
         </div>
       </div>

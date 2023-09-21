@@ -39,9 +39,9 @@ interface ProductProps {
 
 const ProductFeatures: React.FC<ProductProps> = ({ data }) => {
   return (
-    <div className="flex flex-row gap-[125px] xs:flex-col xs:gap-[110px]">
+    <div className="flex flex-row gap-[125px] xs:flex-col xs:gap-[110px] sm:flex-col sm:gap-[120px] md:gap-8">
       {/* Features */}
-      <div className="flex flex-col gap-8 w-[635px] h-full xs:w-full xs:gap-6">
+      <div className="flex flex-col gap-8 w-[635px] h-full xs:w-full xs:gap-6 sm:w-full sm:gap-9 md:w-[500px] md:gap-9">
         <h1 className="text-[32px] font-bold leading-[36px] tracking-[1.14px] xs:text-[24px] xs:tracking:[0.86px]">
           FEATURES
         </h1>
@@ -50,8 +50,8 @@ const ProductFeatures: React.FC<ProductProps> = ({ data }) => {
         </p>
       </div>
       {/* In the box */}
-      <div className="flex flex-col gap-8 ">
-        <h1 className="text-[32px] font-bold leading-[36px] tracking-[1.14px] xs:text-[24px] xs:tracking:[0.86px]">
+      <div className="flex flex-col gap-8 sm:flex-row sm:gap-[11px] ">
+        <h1 className="text-[32px] font-bold leading-[36px] tracking-[1.14px] xs:text-[24px] xs:tracking:[0.86px] sm:w-[339px]">
           IN THE BOX
         </h1>
         <ul>

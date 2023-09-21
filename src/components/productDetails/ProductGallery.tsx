@@ -66,7 +66,7 @@ const ProductGallery: React.FC<ProductProps> = ({ data }) => {
           alt={data.name}
           width={635}
           height={592}
-          className="rounded-lg"
+          className="rounded-lg h-full object-cover"
         />
       </div>
     </div>

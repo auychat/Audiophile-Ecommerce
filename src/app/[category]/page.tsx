@@ -88,12 +88,12 @@ const Category: React.FC<pageProps> = ({ params }) => {
         ))}
       </>
       {/* FEATURED ITEMS */}
-      <div className="pt-[160px] pb-[160px] xs:pt-[180px] xs:pb-[120px] sm:pt-[120px] sm:pb-[120px] xs:mx-auto xs:w-[91.75%]">
+      <div className="pt-[160px] pb-[160px] xs:pt-[180px] xs:pb-[120px] sm:pt-[120px] sm:pb-[120px] xs:mx-auto xs:w-[91.75%] sm:w-[91.5%] sm:mx-auto md:w-[91.5%] md:mx-auto lg:w-[91.5%] lg:mx-auto">
         <FeatureItems />
       </div>
 
       {/* BESTGEAR */}
-      <div className="pb-[160px] xs:pb-[120px] sm:pb-[120px] xs:mx-auto xs:w-[91.75%]">
+      <div className="pb-[160px] xs:pb-[120px] sm:pb-[120px] xs:mx-auto xs:w-[91.75%] sm:w-[91.5%] sm:mx-auto md:w-[91.5%] md:mx-auto lg:w-[91.5%] lg:mx-auto">
         <BestGear />
       </div>
     </div>

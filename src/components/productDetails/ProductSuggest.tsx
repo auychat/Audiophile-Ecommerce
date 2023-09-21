@@ -52,12 +52,12 @@ const ProductSuggest: React.FC<ProductSuggestProps> = ({ data }) => {
   const sugestedProducts = data.others;
 
   return (
-    <div className="flex flex-col gap-[64px]  xs:gap-12">
+    <div className="flex flex-col gap-[64px] xs:gap-12 sm:gap-[56px]">
       <h1 className="text-center text-[32px] font-bold leading-[36px] tracking-[1.14px] xs:text-[24px] xs:leading-[36px] xs:tracking:[0.86px]">
         YOU MAY ALSO LIKE
       </h1>
 
-      <div className="flex flex-row gap-[30px] xs:flex-col">
+      <div className="flex flex-row gap-[30px] xs:flex-col sm:gap-3 md:gap-4">
         {sugestedProducts.map((item, index) => {
           // Find the product that match the slug of the current item for get exact category link
           const product = productsData.find(
@@ -67,16 +67,16 @@ const ProductSuggest: React.FC<ProductSuggestProps> = ({ data }) => {
           if (product) {
             return (
               <div
-                className="flex flex-col gap-[40px] items-center xs:gap-8"
+                className="flex flex-col gap-[40px] items-center xs:gap-8 sm:gap-8 md:gap-8"
                 key={index}
               >
-                <div className="rounded-lg xs:min-h-[120px] xs:w-full xs:h-full xs:bg-[#F1F1F1] xs:relative xs:flex xs:items-center xs:justify-center">
+                <div className="rounded-lg xs:min-h-[120px] xs:w-full xs:h-full xs:bg-[#F1F1F1] xs:relative xs:flex xs:items-center xs:justify-center sm:min-h-[318px] sm:w-full sm:h-full sm:bg-[#F1F1F1] sm:flex sm:items-center sm:justify-center ">
                   <Image
                     src={item.image.desktop}
                     alt={item.name}
                     width={350}
                     height={318}
-                    className="rounded-lg xs:max-h-[120px] xs:object-cover xs:absolute xs:w-[55%] xs:origin-center"
+                    className="rounded-lg xs:max-h-[120px] xs:object-cover xs:absolute xs:w-[55%] xs:origin-center sm:max-h-[318px]  sm:object-cover sm:w-full sm:h-full md:object-cover md:w-full md:h-full"
                   />
                 </div>
                 <h2 className="text-[24px] font-bold tracking-[1.71px]">
