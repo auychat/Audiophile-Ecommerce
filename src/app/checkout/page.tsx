@@ -83,9 +83,10 @@ const Checkout = () => {
   };
 
   // Get the stored formik values from session storage
-  const storedFormikValues = typeof window !== "undefined" ? JSON.parse(
-    sessionStorage.getItem("checkoutFormData") || "null"
-  ): null;
+  const storedFormikValues =
+    typeof window !== "undefined"
+      ? JSON.parse(sessionStorage.getItem("checkoutFormData") || "null")
+      : null;
 
   // State to store the final formik values before redirecting to the review page
   const [finalFormikValues, setFinalFormikValues] =
@@ -105,7 +106,12 @@ const Checkout = () => {
 
   // Use useEffect to update session storage whener the formik values change
   useEffect(() => {
-    sessionStorage.setItem("checkoutFormData", JSON.stringify(formik.values));
+    typeof window !== "undefined"
+      ? sessionStorage.setItem(
+          "checkoutFormData",
+          JSON.stringify(formik.values)
+        )
+      : null;
   }, [formik.values]);
 
   // Function to go back to the previous page

@@ -10,7 +10,10 @@ const OrderReview = () => {
   const router = useRouter();
 
   // Get the data from the session storage
-  const checkoutFormDataString = sessionStorage.getItem("checkoutFormData");
+  const checkoutFormDataString =
+    typeof window !== "undefined"
+      ? sessionStorage.getItem("checkoutFormData")
+      : null;
 
   // Declare the variables
   let name,
@@ -50,7 +53,10 @@ const OrderReview = () => {
   const [submitResult, setSubmitResult] = React.useState("pending");
 
   const handleSubmit = async () => {
-    const getSessionStorageData = sessionStorage.getItem("checkoutFormData");
+    const getSessionStorageData =
+      typeof window !== "undefined"
+        ? sessionStorage.getItem("checkoutFormData")
+        : null;
     let checkoutFormData: {
       name: string;
       email: string;
@@ -82,7 +88,9 @@ const OrderReview = () => {
     //   .join("&");
 
     setSubmitResult("success");
-    sessionStorage.removeItem("checkoutFormData");
+    typeof window !== "undefined"
+      ? sessionStorage.removeItem("checkoutFormData")
+      : null;
     // console.log("Session Storage has been removed");
     router.push("/");
   };
@@ -309,7 +317,10 @@ const OrderReview = () => {
                       readOnly
                       className="form-radio w-5 h-5 text-[#D87D4A] checked:bg-[#D87D4A] checked:border-transparent focus:ring-[#D87D4A] cursor-default"
                     />
-                    <label htmlFor="e-Money" className="text-[12px] tracking-[-0.21px] font-bold">
+                    <label
+                      htmlFor="e-Money"
+                      className="text-[12px] tracking-[-0.21px] font-bold"
+                    >
                       e-Money
                     </label>
                   </div>
@@ -324,7 +335,10 @@ const OrderReview = () => {
                       readOnly
                       className="form-radio w-5 h-5 text-[#D87D4A] checked:bg-[#D87D4A] checked:border-transparent focus:ring-[#D87D4A] cursor-default"
                     />
-                    <label htmlFor="cash-on-delivery" className="text-[12px] tracking-[-0.21px] font-bold">
+                    <label
+                      htmlFor="cash-on-delivery"
+                      className="text-[12px] tracking-[-0.21px] font-bold"
+                    >
                       Cash on Delivery
                     </label>
                   </div>
