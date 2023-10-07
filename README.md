@@ -33,16 +33,10 @@ Users should be able to:
 - **Bonus**: Keep track of what's in the cart, even after refreshing the browser (`localStorage` could be used for this if you're not building out a full-stack app)
 
 ### Screenshot
-
-<<<<<<< HEAD
-![Desktop](./screenshots/screenshot-desktop.png)
-![Tablet](./screenshots/screenshot-tablet.png)
-![Mobile](./screenshots/screenshot-mobile.png)
-=======
 ![Desktop](./screenshots/Screenshot-desktop.png)
 ![Tablet](./screenshots/Screenshot-tablet.png)
 ![Mobile](./screenshots/Screenshot-mobile.png)
->>>>>>> f794590971266ae7d371b49c515950f8d8bf61e6
+
 
 ### Links
 
@@ -86,7 +80,5 @@ It's important to note that this full-stack environment will be implemented excl
 ## Author
 
 - Frontend Mentor - [@auychat](https://www.frontendmentor.io/profile/auychat)
-<<<<<<< HEAD
 - Linkedin Profile - [@Chatcharin](https://www.linkedin.com/in/chatcharin-rangsisawat-9b42ba184/)
-=======
->>>>>>> f794590971266ae7d371b49c515950f8d8bf61e6
+
